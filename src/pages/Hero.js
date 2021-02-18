@@ -1,5 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+import { Logo } from "../components/Logo";
 
-export const hero = () => {
-    return <div></div>;
+export const Hero = () => {
+    return (
+        <>
+            <Logo />
+        </>
+    );
 };
