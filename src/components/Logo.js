@@ -28,7 +28,7 @@ const StyledLogo = styled(motion.div)`
     .svg-bg {
         position: absolute;
         top: 0;
-        z-index: 1;
+        z-index: 1000;
     }
     .container {
         position: absolute;
@@ -39,7 +39,7 @@ const StyledLogo = styled(motion.div)`
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        z-index: 2;
+        z-index: 2000;
         .icon {
             width: 4.8vw;
             margin: 0 1vw 0 2vw;

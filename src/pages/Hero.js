@@ -34,6 +34,13 @@ const Hero = () => {
                 {/* Social Icons */}
                 <div className="social-icons-container"></div>
             </div>
+            {/* Page Content */}
+            <div className="page-content-container">
+                {/* Slider */}
+                <div className="slider"></div>
+                {/* Get Quote */}
+                <div className="get-quote"></div>
+            </div>
             <img class="background-mask" src={Mask} alt="" />
         </StyledHero>
     );
@@ -41,10 +48,11 @@ const Hero = () => {
 
 const StyledHero = styled(motion.div)`
     position: relative;
-    /* overflow-y: hidden; */
+    /* overflow-x: hidden; */
+    /* height: 100vh; */
     .header-container {
         display: flex;
-        z-index: 1;
+        z-index: 2;
         .header-info {
             position: absolute;
             top: 0;
@@ -78,19 +86,49 @@ const StyledHero = styled(motion.div)`
         .menu-container {
             position: absolute;
             top: 3.462vw;
-            left: 22.5vw;
+            left: 22.35vw;
             height: 2.5vw;
-            width: 100%;
+            width: calc(100% - 22.35vw);
             display: flex;
-            clip-path: polygon(1% 0, 100% 0%, 100% 100%, 0 100%);
+            clip-path: polygon(1.3% 0, 100% 0%, 100% 100%, 0 100%);
             background: rgba(0, 0, 0, 0.6);
+            z-index: inherit;
         }
 
         .social-icons-container {
-            clip-path: polygon(0 0, 61% 0, 100% 100%, 0 100%);
+            position: absolute;
+            top: 8vw;
+            clip-path: polygon(0 0, 91.2% 0, 100% 100%, 0 100%);
             background: rgba(0, 0, 0, 0.6);
             height: 2.5vw;
-            width: 2vw;
+            width: 23.03vw;
+            z-index: inherit;
+        }
+    }
+    .page-content-container {
+        z-index: 1;
+        .slider {
+            position: absolute;
+            top: 3.462vw;
+            left: 11vw;
+            clip-path: polygon(
+                14.05% 0,
+                100% 0%,
+                100% 100%,
+                67.9% 100%,
+                11.9% 7%
+            );
+            background: green;
+            height: 66.9vw;
+            width: calc(100% - 11vw);
+        }
+        .get-quote {
+            position: absolute;
+            top: 8vw;
+            clip-path: polygon(0 0, 31.3% 0, 100% 100%, 0% 100%);
+            background: red;
+            height: 58vw;
+            width: 67.1vw;
         }
     }
     .background-mask {
