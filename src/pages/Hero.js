@@ -6,11 +6,14 @@ import { motion } from "framer-motion";
 import Logo from "../components/Logo";
 import Menu from "../components/Menu";
 //Icons
-import Phone from "../img/svg/phone.svg";
-import Mail from "../img/svg/mail.svg";
-import Instagram from "../img/svg/instagram.svg";
+import phone from "../img/svg/phone.svg";
+import mail from "../img/svg/mail.svg";
+import instagram from "../img/svg/instagram.svg";
 //Containers
-import Mask from "../img/svg/mask.svg";
+import mask from "../img/svg/mask.svg";
+import sliderMask from "../img/svg/slider_mask.svg";
+//Img
+import slider from "../img/placeholder/rectangle.png";
 
 const Hero = () => {
     return (
@@ -21,11 +24,11 @@ const Hero = () => {
                 {/* Contact info */}
                 <div className="header-info">
                     <div className="phone-container">
-                        <img src={Phone} alt="Phone icon" />
+                        <img src={phone} alt="Phone icon" />
                         <div>(203) 690-0552</div>
                     </div>
                     <div className="email-container">
-                        <img src={Mail} alt="Mail icon" />
+                        <img src={mail} alt="Mail icon" />
                         <div>info@unictiles.com</div>
                     </div>
                 </div>
@@ -37,19 +40,19 @@ const Hero = () => {
             {/* Page Content */}
             <div className="page-content-container">
                 {/* Slider */}
-                <div className="slider"></div>
+                <div className="slider">
+                    <img className="slider-item" src={slider} alt="" />
+                </div>
                 {/* Get Quote */}
                 <div className="get-quote"></div>
             </div>
-            <img class="background-mask" src={Mask} alt="" />
+            <img className="background-mask" src={mask} alt="" />
         </StyledHero>
     );
 };
 
 const StyledHero = styled(motion.div)`
     position: relative;
-    /* overflow-x: hidden; */
-    /* height: 100vh; */
     .header-container {
         display: flex;
         z-index: 2;
@@ -86,11 +89,10 @@ const StyledHero = styled(motion.div)`
         .menu-container {
             position: absolute;
             top: 3.462vw;
-            left: 22.35vw;
+            left: 0vw;
             height: 2.5vw;
-            width: calc(100% - 22.35vw);
+            width: 100%;
             display: flex;
-            clip-path: polygon(1.3% 0, 100% 0%, 100% 100%, 0 100%);
             background: rgba(0, 0, 0, 0.6);
             z-index: inherit;
         }
@@ -98,11 +100,10 @@ const StyledHero = styled(motion.div)`
         .social-icons-container {
             position: absolute;
             top: 8vw;
-            clip-path: polygon(0 0, 91.2% 0, 100% 100%, 0 100%);
             background: rgba(0, 0, 0, 0.6);
             height: 2.5vw;
-            width: 23.03vw;
-            z-index: inherit;
+            width: 21.2vw;
+            z-index: 1000;
         }
     }
     .page-content-container {
@@ -110,30 +111,38 @@ const StyledHero = styled(motion.div)`
         .slider {
             position: absolute;
             top: 3.462vw;
-            left: 11vw;
-            clip-path: polygon(
-                14.05% 0,
-                100% 0%,
-                100% 100%,
-                67.9% 100%,
-                11.9% 7%
-            );
-            background: green;
-            height: 66.9vw;
-            width: calc(100% - 11vw);
+            left: 0;
+            height: 94.5vh;
+            width: 100%;
+
+            svg {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .slider-item {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center bottom;
+                mask-image: url(${sliderMask});
+                mask-size: 100vw 94.5vh;
+                mask-repeat: no-repeat;
+                mask-position: center;
+            }
         }
         .get-quote {
             position: absolute;
             top: 8vw;
-            clip-path: polygon(0 0, 31.3% 0, 100% 100%, 0% 100%);
-            background: red;
-            height: 58vw;
-            width: 67.1vw;
+            background: orange;
         }
     }
     .background-mask {
         position: absolute;
         width: 100%;
+        height: 100vh;
         top: 3.4vw;
         left: 0;
         right: 0;

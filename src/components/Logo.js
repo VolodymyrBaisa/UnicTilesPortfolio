@@ -3,13 +3,11 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 //Images
-import Container from "../img/svg/logo_container.svg";
 import LogoIcon from "../img/svg/logo_icon.svg";
 
 const Logo = () => {
     return (
         <StyledLogo>
-            <img className="svg-bg" src={Container} alt="" />
             <div className="container">
                 <img className="icon" src={LogoIcon} alt="UnicTiles Logo" />
                 <div>
@@ -23,23 +21,19 @@ const Logo = () => {
 
 const StyledLogo = styled(motion.div)`
     position: relative;
-    width: 25vw;
-    height: 8.2vw;
-    .svg-bg {
-        position: absolute;
-        top: 0;
-        z-index: 1000;
-    }
+    z-index: 1000;
+    filter: drop-shadow(0.5rem 0.6rem 0.3rem rgba(0, 0, 0, 0.25));
     .container {
+        width: 25vw;
+        height: 8vw;
+        clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+        background: #ebb02d;
         position: absolute;
         top: 0;
-        width: 25vw;
-        height: 8.2vw;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        z-index: 2000;
         .icon {
             width: 4.8vw;
             margin: 0 1vw 0 2vw;
@@ -49,14 +43,14 @@ const StyledLogo = styled(motion.div)`
             font-size: 3.6rem;
             font-weight: 600;
             color: #46423d;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
         }
 
         .slogan {
             font-size: 2.15rem;
             font-weight: 500;
             color: #46423d;
-            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
             letter-spacing: -0.024em;
         }
     }
