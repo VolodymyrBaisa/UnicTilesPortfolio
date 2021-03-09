@@ -61,7 +61,7 @@ const StyledHero = styled(motion.div)`
             top: 0;
             background: #525355;
             width: 100%;
-            height: 3.5vw;
+            padding: 1.1rem 0;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -73,8 +73,8 @@ const StyledHero = styled(motion.div)`
                 align-items: center;
                 margin-right: 2vw;
                 img {
-                    width: 2vw;
-                    height: 2vw;
+                    width: 2.8rem;
+                    height: 2.8rem;
                 }
 
                 div {
@@ -88,7 +88,7 @@ const StyledHero = styled(motion.div)`
 
         .menu-container {
             position: absolute;
-            top: 3.462vw;
+            top: 5rem;
             left: 0vw;
             height: 2.5vw;
             width: 100%;
@@ -99,10 +99,10 @@ const StyledHero = styled(motion.div)`
 
         .social-icons-container {
             position: absolute;
-            top: 8vw;
+            top: 12.5rem;
             background: rgba(0, 0, 0, 0.6);
             height: 2.5vw;
-            width: 21.2vw;
+            width: 32.7rem;
             z-index: 1000;
         }
     }
@@ -110,7 +110,7 @@ const StyledHero = styled(motion.div)`
         z-index: 1;
         .slider {
             position: absolute;
-            top: 3.462vw;
+            top: 5rem;
             left: 0;
             height: 94.5vh;
             width: 100%;
@@ -133,17 +133,12 @@ const StyledHero = styled(motion.div)`
                 mask-position: center;
             }
         }
-        .get-quote {
-            position: absolute;
-            top: 8vw;
-            background: orange;
-        }
     }
     .background-mask {
         position: absolute;
         width: 100%;
         height: 100vh;
-        top: 3.4vw;
+        top: 5rem;
         left: 0;
         right: 0;
         z-index: -1;

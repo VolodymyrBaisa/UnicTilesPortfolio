@@ -24,18 +24,18 @@ const StyledLogo = styled(motion.div)`
     z-index: 1000;
     filter: drop-shadow(0.5rem 0.6rem 0.3rem rgba(0, 0, 0, 0.25));
     .container {
-        width: 25vw;
-        height: 8vw;
+        width: 38.5em;
         clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
         background: #ebb02d;
         position: absolute;
+        padding: 2.2em 0;
         top: 0;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         .icon {
-            width: 4.8vw;
+            width: 8rem;
             margin: 0 1vw 0 2vw;
         }
         .title {
