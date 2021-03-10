@@ -33,7 +33,7 @@ const StyledSocialIcons = styled(motion.div)`
             width: 0;
             overflow: hidden;
             border-bottom: 0.4rem solid #ebb02d;
-            margin-top: 0.2rem;
+            margin-top: 0.1rem;
             -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
         }

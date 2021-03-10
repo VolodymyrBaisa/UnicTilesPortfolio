@@ -8,6 +8,7 @@ import ShortContacts from "../components/ShortContacts";
 import Menu from "../components/Menu";
 import Slider from "../components/Slider";
 import SocialIcons from "../components/SocialIcons";
+import GetQuoteBox from "../components/GetQuoteBox";
 
 //Containers
 import mask from "../img/svg/mask.svg";
@@ -44,7 +45,9 @@ const Hero = () => {
                 {/* Slider */}
                 <Slider />
                 {/* Get Quote */}
-                <div className="get-quote"></div>
+                <div className="get-quote">
+                    <GetQuoteBox />
+                </div>
             </div>
             <img className="background-mask" src={mask} alt="" />
         </StyledHero>
@@ -77,7 +80,7 @@ const StyledHero = styled(motion.div)`
 
         .social-icons-container {
             position: absolute;
-            top: 12.5rem;
+            top: 12.4rem;
             padding: 0.5rem 2rem;
             background: rgba(0, 0, 0, 0.6);
             width: 32.7rem;
@@ -86,6 +89,13 @@ const StyledHero = styled(motion.div)`
     }
     .page-content-container {
         z-index: 1;
+
+        .get-quote {
+            position: absolute;
+            width: 32.7rem;
+            top: 23rem;
+            z-index: 1;
+        }
     }
     .background-mask {
         position: absolute;
