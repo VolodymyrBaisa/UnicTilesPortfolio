@@ -7,8 +7,8 @@ import Logo from "../components/Logo";
 import ShortContacts from "../components/ShortContacts";
 import Menu from "../components/Menu";
 import Slider from "../components/Slider";
-//Icons
-import instagram from "../img/svg/instagram.svg";
+import SocialIcons from "../components/SocialIcons";
+
 //Containers
 import mask from "../img/svg/mask.svg";
 
@@ -35,7 +35,9 @@ const Hero = () => {
                     <Menu menuArray={menuArray} />
                 </div>
                 {/* Social Icons */}
-                <div className="social-icons-container"></div>
+                <div className="social-icons-container">
+                    <SocialIcons />
+                </div>
             </div>
             {/* Page Content */}
             <div className="page-content-container">
@@ -76,6 +78,7 @@ const StyledHero = styled(motion.div)`
         .social-icons-container {
             position: absolute;
             top: 12.5rem;
+            padding: 0.5rem 2rem;
             background: rgba(0, 0, 0, 0.6);
             width: 32.7rem;
             z-index: 1000;

@@ -15,8 +15,6 @@ const Menu = ({ menuArray }) => {
     );
 };
 
-const menuAnimation = () => {};
-
 const StyledMenu = styled(motion.div)`
     ul {
         display: flex;

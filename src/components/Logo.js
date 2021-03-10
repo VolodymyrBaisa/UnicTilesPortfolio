@@ -36,7 +36,7 @@ const StyledLogo = styled(motion.div)`
         align-items: center;
         .icon {
             width: 8rem;
-            margin: 0 1vw 0 2vw;
+            margin: 0 1vw 0 2rem;
         }
         .title {
             text-transform: uppercase;
