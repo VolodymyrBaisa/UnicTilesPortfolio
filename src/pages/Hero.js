@@ -9,9 +9,17 @@ import Menu from "../components/Menu";
 import Slider from "../components/Slider";
 import SocialIcons from "../components/SocialIcons";
 import GetQuoteBox from "../components/GetQuoteBox";
+//Icons
+import instagram from "../img/svg/instagram.svg";
+import facebook from "../img/svg/facebook.svg";
 
 //Containers
 import mask from "../img/svg/mask.svg";
+
+const socialIcons = [
+    { icon: instagram, link: "#" },
+    { icon: facebook, link: "#" },
+];
 
 const menuArray = [
     { text: "Home", link: "#" },
@@ -29,7 +37,10 @@ const Hero = () => {
                 <Logo />
                 {/* Contact info */}
                 <div className="header-info">
-                    <ShortContacts />
+                    <ShortContacts
+                        tPhone={"(203) 690-0552"}
+                        tMail={"info@unictiles.com"}
+                    />
                 </div>
                 {/* Menu */}
                 <div className="menu-container">
@@ -37,7 +48,7 @@ const Hero = () => {
                 </div>
                 {/* Social Icons */}
                 <div className="social-icons-container">
-                    <SocialIcons />
+                    <SocialIcons icons={socialIcons} />
                 </div>
             </div>
             {/* Page Content */}
@@ -46,7 +57,21 @@ const Hero = () => {
                 <Slider />
                 {/* Get Quote */}
                 <div className="get-quote">
-                    <GetQuoteBox />
+                    <GetQuoteBox
+                        btnText={"Get free quote"}
+                        btnLink={"#"}
+                        qHeder={
+                            "RESIDENTIAL AND COMMERCIAL TILE INSTALLATION CONTRACTOR"
+                        }
+                        qText={`
+                Our top-notch design team and highly skilled
+                flooring tile installation
+
+                professionals create stunning tiling 
+                masterpieces, backsplash ideas,
+                
+                and backsplash designs that we promise you will enjoy.`}
+                    />
                 </div>
             </div>
             <img className="background-mask" src={mask} alt="" />

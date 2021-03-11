@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 const animation = {
     initial: {
-        background: "linear-gradient(90deg, #F7F7F7 0%, #EBB02D 0%), #EBB02D",
+        background: "linear-gradient(90deg, #FDF6F9 0%, #EBB02D 0%), #EBB02D",
     },
     whileHover: {
         background:
-            "linear-gradient(90deg, #F7F7F7 100%, #EBB02D 100%), #EBB02D",
+            "linear-gradient(90deg, #FDF6F9 100%, #EBB02D 100%), #EBB02D",
     },
     transition: {
         duration: 0.5,

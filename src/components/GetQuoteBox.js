@@ -8,17 +8,9 @@ import Button from "../components/Button";
 const GetQuoteBox = ({ btnText, btnLink, qHeder, qText }) => {
     return (
         <StyledGetQuoteBox>
-            <Button text={"Get free quote"} link={"#"} />
-            <h2>RESIDENTIAL AND COMMERCIAL TILE INSTALLATION CONTRACTOR</h2>
-            <p>
-                Our top-notch design team and highly skilled flooring tile
-                installation
-            </p>
-            <p>
-                professionals create stunning tiling masterpieces, backsplash
-                ideas,
-            </p>
-            <p>and backsplash designs that we promise you will enjoy.</p>
+            <Button text={btnText} link={btnLink} />
+            <h2>{qHeder}</h2>
+            <p>{qText}</p>
         </StyledGetQuoteBox>
     );
 };
@@ -30,15 +22,16 @@ const StyledGetQuoteBox = styled(motion.div)`
     h2 {
         font-size: 1.6rem;
         text-align: center;
-        color: #fff;
+        color: #fdf6f9;
         line-height: 1.5em;
         margin: 2em 0 1em 0;
     }
 
     p {
         font-size: 1.4rem;
-        color: #fff;
+        color: #fdf6f9;
         margin-top: 0.5em;
+        white-space: pre-line;
     }
 `;
 

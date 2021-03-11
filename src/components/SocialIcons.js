@@ -2,19 +2,17 @@ import React from "react";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
-//Icons
-import instagram from "../img/svg/instagram.svg";
-import facebook from "../img/svg/facebook.svg";
 
-const SocialIcons = () => {
+const SocialIcons = ({ icons }) => {
     return (
         <StyledSocialIcons>
-            <div>
-                <img src={instagram} alt="" />
-            </div>
-            <div>
-                <img src={facebook} alt="" />
-            </div>
+            {icons.map((icon) => {
+                return (
+                    <div>
+                        <img src={icon.icon} alt="" />
+                    </div>
+                );
+            })}
         </StyledSocialIcons>
     );
 };

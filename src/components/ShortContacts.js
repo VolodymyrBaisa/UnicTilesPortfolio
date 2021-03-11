@@ -6,16 +6,16 @@ import { motion } from "framer-motion";
 import phone from "../img/svg/phone.svg";
 import mail from "../img/svg/mail.svg";
 
-const ShortContacts = () => {
+const ShortContacts = ({ tPhone, tMail }) => {
     return (
         <StyledShortContacts>
             <div className="phone-container">
                 <img src={phone} alt="Phone icon" />
-                <div>(203) 690-0552</div>
+                <div>{tPhone}</div>
             </div>
             <div className="email-container">
                 <img src={mail} alt="Mail icon" />
-                <div>info@unictiles.com</div>
+                <div>{tMail}</div>
             </div>
         </StyledShortContacts>
     );
@@ -30,6 +30,24 @@ const StyledShortContacts = styled(motion.div)`
         display: flex;
         flex-direction: row;
         align-items: center;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            transition: all 0.2s ease;
+            position: absolute;
+            content: "";
+            display: block;
+            width: 0;
+            overflow: hidden;
+            border-bottom: 0.4rem solid #ebb02d;
+            margin-top: 4.3rem;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        &:hover:after {
+            width: 100%;
+        }
         img {
             width: 2.8rem;
             height: 2.8rem;
