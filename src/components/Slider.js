@@ -19,9 +19,14 @@ const Slider = ({ sliders, interval }) => {
     };
 
     useEffect(() => {
-        if (!fInterval) clearInterval(fInterval);
+        if (fInterval) clearInterval(fInterval);
         fInterval = setInterval(imageSlider, interval);
-    }, []);
+    }, [slider, interval]);
+
+    const onClickSwitchImage = (sIndex) => {
+        index = sIndex;
+        setSlider(sliders[index]);
+    };
 
     const dots = () => {
         let result = [];
@@ -29,7 +34,14 @@ const Slider = ({ sliders, interval }) => {
         for (let i = 0; i < total; i++) {
             if (index === i)
                 result.push(<div key={i} className="slider-item active"></div>);
-            else result.push(<div key={i} className="slider-item"></div>);
+            else
+                result.push(
+                    <div
+                        key={i}
+                        onClick={() => onClickSwitchImage(i)}
+                        className="slider-item"
+                    ></div>
+                );
         }
         return result;
     };
@@ -75,6 +87,7 @@ const StyledSlider = styled(motion.div)`
             margin-bottom: 0.8em;
             background: rgba(255, 255, 255, 0.6);
             border-radius: 50%;
+            cursor: pointer;
         }
 
         .slider-item:last-child {
