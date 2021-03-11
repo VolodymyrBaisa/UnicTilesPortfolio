@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 const animation = {
     initial: {
-        background: "linear-gradient(90deg, #FFFFFF 0%, #EBB02D 0%), #EBB02D",
+        background: "linear-gradient(90deg, #F7F7F7 0%, #EBB02D 0%), #EBB02D",
     },
     whileHover: {
         background:
-            "linear-gradient(90deg, #FFFFFF 100%, #EBB02D 100%), #EBB02D",
+            "linear-gradient(90deg, #F7F7F7 100%, #EBB02D 100%), #EBB02D",
     },
     transition: {
         duration: 0.5,
@@ -40,7 +40,7 @@ const StyledButton = styled(motion.div)`
     div {
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         padding: 0.7em 2em;
         color: #46423d;
     }
