@@ -12,9 +12,15 @@ import GetQuoteBox from "../components/GetQuoteBox";
 //Icons
 import instagram from "../img/svg/instagram.svg";
 import facebook from "../img/svg/facebook.svg";
-
 //Containers
 import mask from "../img/svg/mask.svg";
+//Img
+import slider1 from "../img/placeholder/1.jpg";
+import slider2 from "../img/placeholder/2.jpg";
+import slider3 from "../img/placeholder/3.jpg";
+import slider4 from "../img/placeholder/4.jpg";
+
+const sliders = [slider1, slider2, slider3, slider4];
 
 const socialIcons = [
     { icon: instagram, link: "#" },
@@ -54,7 +60,7 @@ const Hero = () => {
             {/* Page Content */}
             <div className="page-content-container">
                 {/* Slider */}
-                <Slider />
+                <Slider sliders={sliders} interval={5000} />
                 {/* Get Quote */}
                 <div className="get-quote">
                     <GetQuoteBox
@@ -69,7 +75,7 @@ const Hero = () => {
 
                 professionals create stunning tiling 
                 masterpieces, backsplash ideas,
-                
+
                 and backsplash designs that we promise you will enjoy.`}
                     />
                 </div>

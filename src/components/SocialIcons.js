@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const SocialIcons = ({ icons }) => {
     return (
         <StyledSocialIcons>
-            {icons.map((icon) => {
+            {icons.map((icon, index) => {
                 return (
-                    <div>
+                    <div key={index}>
                         <img src={icon.icon} alt="" />
                     </div>
                 );
