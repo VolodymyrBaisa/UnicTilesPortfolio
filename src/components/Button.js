@@ -40,7 +40,7 @@ const StyledButton = styled(motion.div)`
     div {
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         padding: 0.7em 2em;
         color: #46423d;
     }

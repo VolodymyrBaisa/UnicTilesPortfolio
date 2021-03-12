@@ -6,13 +6,14 @@ import { motion } from "framer-motion";
 const SocialIcons = ({ icons }) => {
     return (
         <StyledSocialIcons>
-            {icons.map((icon, index) => {
-                return (
-                    <div key={index}>
-                        <img src={icon.icon} alt="" />
-                    </div>
-                );
-            })}
+            {icons.length > 0 &&
+                icons.map((icon, index) => {
+                    return (
+                        <div key={index}>
+                            <img src={icon.icon} alt="" />
+                        </div>
+                    );
+                })}
         </StyledSocialIcons>
     );
 };

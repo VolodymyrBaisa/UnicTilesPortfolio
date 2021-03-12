@@ -20,7 +20,7 @@ const StyledGetQuoteBox = styled(motion.div)`
     padding: 4rem 2rem 2rem 2rem;
 
     h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         text-align: center;
         color: #fdf6f9;
         line-height: 1.5em;
@@ -29,7 +29,7 @@ const StyledGetQuoteBox = styled(motion.div)`
     }
 
     p {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: #fdf6f9;
         white-space: pre-line;
     }

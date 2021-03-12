@@ -7,9 +7,10 @@ const Menu = ({ menuArray }) => {
     return (
         <StyledMenu>
             <ul>
-                {menuArray.map((item, index) => (
-                    <motion.li key={index}>{item.text}</motion.li>
-                ))}
+                {menuArray.length > 0 &&
+                    menuArray.map((item, index) => (
+                        <motion.li key={index}>{item.text}</motion.li>
+                    ))}
             </ul>
         </StyledMenu>
     );

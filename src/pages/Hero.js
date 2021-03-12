@@ -113,10 +113,10 @@ const StyledHero = styled(motion.div)`
 
         .social-icons-container {
             position: absolute;
-            top: 12.4rem;
+            top: 12.2rem;
             padding: 0.5rem 2rem;
             background: rgba(0, 0, 0, 0.6);
-            width: 32.7rem;
+            width: 36rem;
             z-index: 1000;
         }
     }
@@ -125,7 +125,7 @@ const StyledHero = styled(motion.div)`
 
         .get-quote {
             position: absolute;
-            width: 32.7rem;
+            width: 36rem;
             top: 23rem;
             z-index: 1;
         }

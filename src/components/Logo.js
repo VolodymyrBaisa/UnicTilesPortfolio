@@ -24,30 +24,31 @@ const StyledLogo = styled(motion.div)`
     z-index: 1000;
     filter: drop-shadow(0.5rem 0.6rem 0.3rem rgba(0, 0, 0, 0.25));
     .container {
-        width: 38.5em;
+        width: 42.3rem;
         clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
         background: #ebb02d;
         position: absolute;
-        padding: 2.2em 0;
+        padding: 1.9em 0;
         top: 0;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         .icon {
-            width: 8rem;
+            width: 8.5rem;
             margin: 0 1vw 0 2rem;
         }
         .title {
             text-transform: uppercase;
-            font-size: 3.6rem;
+            font-size: 4.6rem;
             font-weight: 600;
             color: #46423d;
+            line-height: 5rem;
             text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
         }
 
         .slogan {
-            font-size: 2.15rem;
+            font-size: 2.4rem;
             font-weight: 500;
             color: #46423d;
             text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
