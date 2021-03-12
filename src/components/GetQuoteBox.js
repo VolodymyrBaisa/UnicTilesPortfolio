@@ -25,6 +25,7 @@ const StyledGetQuoteBox = styled(motion.div)`
         color: #fdf6f9;
         line-height: 1.5em;
         margin: 2em 0 1em 0;
+        text-transform: uppercase;
     }
 
     p {

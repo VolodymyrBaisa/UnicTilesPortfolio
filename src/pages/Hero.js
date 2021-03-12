@@ -87,6 +87,8 @@ const Hero = () => {
 
 const StyledHero = styled(motion.div)`
     position: relative;
+    height: 100vh;
+    z-index: 1;
     .header-container {
         display: flex;
         z-index: 2;
