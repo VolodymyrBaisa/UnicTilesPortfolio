@@ -20,18 +20,17 @@ const StyledGetQuoteBox = styled(motion.div)`
     padding: 4rem 2rem 2rem 2rem;
 
     h2 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         text-align: center;
         color: #fdf6f9;
         line-height: 1.5em;
-        margin: 2em 0 1em 0;
+        margin: 2em 0 0 0;
         text-transform: uppercase;
     }
 
     p {
         font-size: 1.4rem;
         color: #fdf6f9;
-        margin-top: 0.5em;
         white-space: pre-line;
     }
 `;

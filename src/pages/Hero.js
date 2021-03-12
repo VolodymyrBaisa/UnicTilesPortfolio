@@ -87,7 +87,7 @@ const Hero = () => {
 
 const StyledHero = styled(motion.div)`
     position: relative;
-    height: 100vh;
+    height: 70rem;
     z-index: 1;
     .header-container {
         display: flex;
@@ -133,7 +133,7 @@ const StyledHero = styled(motion.div)`
     .background-mask {
         position: absolute;
         width: 100%;
-        height: 100vh;
+        height: 70rem;
         top: 5rem;
         left: 0;
         right: 0;

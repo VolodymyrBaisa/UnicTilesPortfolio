@@ -58,7 +58,7 @@ const StyledSlider = styled(motion.div)`
     position: absolute;
     top: 4rem;
     left: 0;
-    height: 94.5vh;
+    height: 68rem;
     width: 100%;
 
     .slider-item {
@@ -67,7 +67,7 @@ const StyledSlider = styled(motion.div)`
         object-fit: cover;
         object-position: center center;
         mask-image: url(${sliderMask});
-        mask-size: 100vw 94.5vh;
+        mask-size: 100vw 67rem;
         mask-repeat: no-repeat;
         mask-position: center;
     }

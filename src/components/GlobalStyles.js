@@ -8,11 +8,17 @@ const GlobalStyles = createGlobalStyle`
     //outline: 1px solid #66b8da !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@500;700&display=swap');
-
-html {
+html, body {
     font-size: 0.65vw;
     font-family: "Sarabun", sans-serif;
+
+    @media screen and (max-width: 800px) {
+        font-size: 1vw;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 1.1vw;
+    }
 }
 `;
 
