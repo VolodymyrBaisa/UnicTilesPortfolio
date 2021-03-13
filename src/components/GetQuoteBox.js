@@ -5,9 +5,28 @@ import { motion } from "framer-motion";
 //Components
 import Button from "../components/Button";
 
+const getQuoteBoxAnimation = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: {
+        x: 0,
+        opacity: 1,
+        transform: {
+            duration: 0.5,
+            type: "tween",
+        },
+    },
+};
+
 const GetQuoteBox = ({ btnText, btnLink, qHeder, qText }) => {
     return (
-        <StyledGetQuoteBox>
+        <StyledGetQuoteBox
+            variants={getQuoteBoxAnimation}
+            initial="hidden"
+            animate="visible"
+        >
             <Button text={btnText} link={btnLink} />
             <h2>{qHeder}</h2>
             <p>{qText}</p>

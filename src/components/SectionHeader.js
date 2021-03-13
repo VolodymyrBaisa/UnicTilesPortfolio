@@ -17,7 +17,9 @@ const sectionHeaderAnimation = {
 
 const SectionHeader = ({ sText, sColor }) => {
     const controls = useAnimation();
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
 
     useEffect(() => {
         if (inView) {

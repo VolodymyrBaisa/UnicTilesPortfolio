@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import arrowRight from "../img/svg/keyboard_arrow_right.svg";
 
 const cardAnimation = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
         opacity: 1,
@@ -24,7 +24,9 @@ const learnMoreBtnAnimation = {
 
 const Card = ({ image, headerIcon, headerText, shortText }) => {
     const controls = useAnimation();
-    const { ref, inView } = useInView();
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
 
     useEffect(() => {
         if (inView) {
