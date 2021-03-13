@@ -1,18 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
 //Styling and Animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 //Icons
 import arrowRight from "../img/svg/keyboard_arrow_right.svg";
 
+const cardAnimation = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+
+const learnMoreBtnAnimation = {
+    start: { x: 0 },
+    hover: { x: 10 },
+};
+
 const Card = ({ image, headerIcon, headerText, shortText }) => {
+    const controls = useAnimation();
+    const { ref, inView } = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+        if (!inView) {
+            controls.start("hidden");
+        }
+    }, [controls, inView]);
+
     return (
-        <StyledCard>
+        <StyledCard
+            ref={ref}
+            variants={cardAnimation}
+            animate={controls}
+            initial="hidden"
+        >
             {image && (
                 <img
                     className="image"
                     src={Object.values(image)}
-                    alt={headerIcon}
+                    alt={headerText}
                 />
             )}
             <div className="content-wrapper">
@@ -29,10 +63,15 @@ const Card = ({ image, headerIcon, headerText, shortText }) => {
                 {shortText && (
                     <div className="short-description">{shortText}</div>
                 )}
-                <div className="learn-more-wrapper">
+                <motion.div
+                    className="learn-more-wrapper"
+                    variants={learnMoreBtnAnimation}
+                    initial="start"
+                    whileHover="hover"
+                >
                     <div>Learn More</div>
                     <img src={arrowRight} alt="" />
-                </div>
+                </motion.div>
             </div>
         </StyledCard>
     );
@@ -82,7 +121,7 @@ const StyledCard = styled(motion.div)`
         }
         .learn-more-wrapper {
             position: relative;
-            display: flex;
+            display: inline-block;
             align-items: center;
             margin: 2rem 0 3rem 0;
             cursor: pointer;
@@ -96,6 +135,7 @@ const StyledCard = styled(motion.div)`
                 width: 16.8rem;
             }
             div {
+                display: inline-block;
                 font-size: 2rem;
                 font-weight: 600;
                 line-height: 31px;
@@ -104,6 +144,7 @@ const StyledCard = styled(motion.div)`
                 text-transform: uppercase;
             }
             img {
+                display: inline-block;
                 margin-left: 1rem;
                 width: 2rem;
             }

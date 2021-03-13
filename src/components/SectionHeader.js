@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 //Styling and Animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const sectionHeaderAnimation = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+
 const SectionHeader = ({ sText, sColor }) => {
-    return <StyledSectionHeader sColor={sColor}>{sText}</StyledSectionHeader>;
+    const controls = useAnimation();
+    const { ref, inView } = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+        if (!inView) {
+            controls.start("hidden");
+        }
+    }, [controls, inView]);
+
+    return (
+        <StyledSectionHeader
+            ref={ref}
+            variants={sectionHeaderAnimation}
+            animate={controls}
+            initial="hidden"
+            sColor={sColor}
+        >
+            {sText}
+        </StyledSectionHeader>
+    );
 };
 
 const StyledSectionHeader = styled(motion.div)`

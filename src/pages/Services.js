@@ -94,7 +94,8 @@ const Services = () => {
         <StyledServices>
             <SectionHeader sText={"Our Services"} sColor={"#46423D"} />
             <div className="card-wrapper">
-                {cards.length > 0 && cards.map((card) => <Card {...card} />)}
+                {cards.length > 0 &&
+                    cards.map((card, index) => <Card {...card} key={index} />)}
             </div>
         </StyledServices>
     );
@@ -115,14 +116,14 @@ const StyledServices = styled(motion.div)`
     @media screen and (max-width: 800px) {
         .card-wrapper {
             grid-template-columns: repeat(2, 1fr);
-            margin: 0 5rem;
+            margin: 0 4rem;
         }
     }
 
     @media screen and (max-width: 600px) {
         .card-wrapper {
             grid-template-columns: repeat(1, 1fr);
-            margin: 0 8rem;
+            margin: 0 3rem;
         }
     }
 `;

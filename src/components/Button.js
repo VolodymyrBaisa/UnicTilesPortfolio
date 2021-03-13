@@ -20,9 +20,9 @@ const Button = ({ text, link }) => {
     return (
         <StyledButton
             variants={animation}
-            initial={"initial"}
-            whileHover={"whileHover"}
-            transition={"transition"}
+            initial="initial"
+            whileHover="whileHover"
+            transition="transition"
         >
             <div>{text}</div>
         </StyledButton>
