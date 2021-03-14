@@ -55,6 +55,13 @@ const StyledLogo = styled(motion.div)`
             letter-spacing: -0.024em;
         }
     }
+
+    @media screen and (max-width: 800px) {
+        .container {
+            width: 100%;
+            clip-path: none;
+        }
+    }
 `;
 
 export default Logo;

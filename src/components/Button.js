@@ -16,9 +16,10 @@ const animation = {
     },
 };
 
-const Button = ({ text, link }) => {
+const Button = ({ text, fontSize, link }) => {
     return (
         <StyledButton
+            bFontSize={fontSize}
             variants={animation}
             initial="initial"
             whileHover="whileHover"
@@ -40,7 +41,7 @@ const StyledButton = styled(motion.div)`
     div {
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 1.8rem;
+        font-size: ${(props) => (props.bFontSize ? props.bFontSize : "1.8rem")};
         padding: 0.7em 2em;
         color: #46423d;
     }

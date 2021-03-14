@@ -20,7 +20,6 @@ const SocialIcons = ({ icons }) => {
 const StyledSocialIcons = styled(motion.div)`
     display: flex;
     align-items: center;
-
     div {
         margin-right: 1.5rem;
         cursor: pointer;
@@ -42,6 +41,20 @@ const StyledSocialIcons = styled(motion.div)`
     }
     img {
         width: 2.5rem;
+    }
+
+    @media screen and (max-width: 800px) {
+        img {
+            width: 3.5rem;
+        }
+        div {
+            &:after {
+                margin-top: 0.7rem;
+            }
+            &:hover:after {
+                width: 3.5rem;
+            }
+        }
     }
 `;
 export default SocialIcons;

@@ -11,20 +11,26 @@ const GlobalStyles = createGlobalStyle`
 html, body {
     font-size: 0.65vw;
     font-family: "Sarabun", sans-serif;
+}
 
-    @media screen and (max-width: 1024px) {
-        font-size: 0.85vw;
+@media screen and (max-width: 1024px) {
+        html, body {
+            font-size: 0.85vw;
+        }
     }
 
 
     @media screen and (max-width: 800px) {
-        font-size: 1.2vw;
+        html, body {
+            font-size: 1.2vw;
+        }
     }
 
     @media screen and (max-width: 600px) {
-        font-size: 2vw;
+        html, body {
+            font-size: 2vw;
+        }
     }
-}
 `;
 
 export default GlobalStyles;

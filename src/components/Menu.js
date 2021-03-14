@@ -1,22 +1,32 @@
 import React from "react";
+//Utils
+import { useMediaQuery } from "../utils/MediaQuery";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+//Icons
+import menu from "../img/svg/menu.svg";
 
 const Menu = ({ menuArray }) => {
+    const isPageWidthMin800 = useMediaQuery("(min-width: 801px)");
     return (
         <StyledMenu>
-            <ul>
-                {menuArray.length > 0 &&
-                    menuArray.map((item, index) => (
-                        <motion.li key={index}>{item.text}</motion.li>
-                    ))}
-            </ul>
+            {isPageWidthMin800 ? (
+                <ul>
+                    {menuArray.length > 0 &&
+                        menuArray.map((item, index) => (
+                            <motion.li key={index}>{item.text}</motion.li>
+                        ))}
+                </ul>
+            ) : (
+                <img className="menu" src={menu} alt="Main menu" />
+            )}
         </StyledMenu>
     );
 };
 
 const StyledMenu = styled(motion.div)`
+    /* Menu style if window size bigger then 800px */
     ul {
         display: flex;
         flex-direction: row;
@@ -24,7 +34,7 @@ const StyledMenu = styled(motion.div)`
         li {
             position: relative;
             color: #ffffff;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             list-style: none;
             margin-left: 2.5rem;
             cursor: pointer;
@@ -36,7 +46,7 @@ const StyledMenu = styled(motion.div)`
                 width: 0;
                 overflow: hidden;
                 border-bottom: 0.4rem solid #ebb02d;
-                margin-top: 0.7rem;
+                margin-top: 0.6rem;
                 -webkit-transition: all 0.3s ease;
                 transition: all 0.3s ease;
             }
@@ -44,6 +54,12 @@ const StyledMenu = styled(motion.div)`
                 width: 100%;
             }
         }
+    }
+
+    /*Menu style if window size min 800px*/
+    .menu {
+        width: 3.5rem;
+        cursor: pointer;
     }
 `;
 

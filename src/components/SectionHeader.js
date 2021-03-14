@@ -51,7 +51,7 @@ const StyledSectionHeader = styled(motion.div)`
     text-align: center;
     letter-spacing: 0.025em;
     text-transform: uppercase;
-    color: ${(props) => props.sColor};
+    color: ${(props) => (props.sColor ? props.sColor : "#000")};
     margin-bottom: 4.5rem;
 
     &:before {

@@ -52,7 +52,7 @@ const StyledShortContacts = styled(motion.div)`
             width: 2.8rem;
             height: 2.8rem;
         }
-
+        /*Phone*/
         div {
             margin: 0 0.5vw;
             color: #ffffff;
@@ -63,6 +63,18 @@ const StyledShortContacts = styled(motion.div)`
 
     .phone-container {
         margin-right: 2em;
+    }
+
+    @media screen and (max-width: 800px) {
+        justify-content: space-around;
+        .phone-container,
+        .email-container {
+            img {
+                width: 3.5rem;
+                height: 3.5rem;
+                margin-right: 0.5em;
+            }
+        }
     }
 `;
 
