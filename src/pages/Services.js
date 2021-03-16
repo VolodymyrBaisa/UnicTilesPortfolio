@@ -102,7 +102,7 @@ const Services = () => {
 };
 
 const StyledServices = styled(motion.div)`
-    height: 70rem;
+    min-height: 70rem;
     position: relative;
     z-index: 0;
 

@@ -13,7 +13,7 @@ import Button from "../../components/Button";
 import instagram from "../../img/svg/instagram.svg";
 import facebook from "../../img/svg/facebook.svg";
 //Containers
-import mask from "../../img/svg/mask.svg";
+import mask from "../../img/svg/mask-up.svg";
 //Img
 import slider1 from "../../img/placeholder/1.jpg";
 import slider2 from "../../img/placeholder/2.jpg";
