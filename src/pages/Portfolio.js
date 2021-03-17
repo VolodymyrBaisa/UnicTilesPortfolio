@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 //Components
 import SectionHeader from "../components/SectionHeader";
-import InstagramSlider from "../components/InstagramSlider";
+import PortfolioSlider from "../components/PortfolioSlider";
 //Containers
 import mask from "../img/svg/mask-down.svg";
 //Utils
@@ -28,13 +28,13 @@ const Portfolio = () => {
     return (
         <StyledPortfolio setItemsOnPage={setItemsOnPage}>
             <SectionHeader sText={"Portfolio"} sColor={"#FFFFFF"} />
-            <InstagramSlider totalItemsOnPage={itemsOnPage} />
+            <PortfolioSlider totalItemsOnPage={itemsOnPage} />
             <img className="background-mask" src={mask} alt="" />
         </StyledPortfolio>
     );
 };
 const StyledPortfolio = styled(motion.div)`
-    height: 75rem;
+    height: 82rem;
     position: relative;
     z-index: 1;
     padding: 10rem 2rem 2rem 2rem;
@@ -42,11 +42,27 @@ const StyledPortfolio = styled(motion.div)`
     .background-mask {
         position: absolute;
         width: 100%;
-        height: 80rem;
+        height: 87rem;
         top: -5rem;
         left: 0;
         right: 0;
         z-index: -1;
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 10rem 2rem 2rem 2rem;
+        height: 79rem;
+        .background-mask {
+            height: 84rem;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        height: 67rem;
+        padding: 8rem 2rem 2rem 2rem;
+        .background-mask {
+            height: 72rem;
+        }
     }
 `;
 
