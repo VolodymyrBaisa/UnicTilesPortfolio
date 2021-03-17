@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 //Styling and Animation
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
@@ -13,6 +13,30 @@ import slider4 from "../img/placeholder/4.jpg";
 
 //Slider Data
 const sliders = [
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
     slider1,
     slider2,
     slider3,
@@ -63,6 +87,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         if (inView) {
@@ -73,7 +98,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
         }
     }, [controls, inView]);
 
-    const slider = (page) => {
+    const slider = () => {
         let result = [];
         const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
         for (
@@ -100,7 +125,31 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
         return result;
     };
 
-    const pagination = () => {};
+    const pagination = () => {
+        const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
+        let results = [];
+        for (let i = 0; i < totalPages; i++) {
+            if (i <= 10) {
+                if (i === page - 1)
+                    results.push(<div className="dot active"></div>);
+                else results.push(<div className="dot"></div>);
+            } else if (page > 10) {
+                results[10] = <div className="dot active"></div>;
+            } else {
+                results[page] = <div className="dot"></div>;
+            }
+        }
+
+        return results;
+    };
+
+    const onClickIncreasePage = () => {
+        const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
+        if (page < totalPages) setPage(page + 1);
+    };
+    const onClickDecreasePage = () => {
+        if (page > 1) setPage(page - 1);
+    };
 
     return (
         <StyledPortfolioSlider
@@ -109,7 +158,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
             animate={controls}
             initial="hidden"
         >
-            <div className="slider">{slider(1)}</div>
+            <div className="slider">{slider()}</div>
             <div className="pagination-wrapper">
                 <motion.img
                     className="arrow-left"
@@ -119,15 +168,10 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
                     initial="start"
                     whileHover="hover"
                     whileTap="tap"
+                    onClick={onClickDecreasePage}
                 />
                 <div className="pagination">
-                    <div className="background">
-                        <div className="dot active"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                        <div className="dot"></div>
-                    </div>
+                    <div className="background">{pagination()}</div>
                 </div>
                 <motion.img
                     className="arrow-right"
@@ -137,6 +181,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
                     initial="start"
                     whileHover="hover"
                     whileTap="tap"
+                    onClick={onClickIncreasePage}
                 />
             </div>
         </StyledPortfolioSlider>
