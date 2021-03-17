@@ -7,13 +7,13 @@ import Button from "../components/Button";
 
 const getQuoteBoxAnimation = {
     hidden: {
-        x: -100,
+        x: -200,
         opacity: 0,
     },
     visible: {
         x: 0,
         opacity: 1,
-        transform: {
+        transition: {
             duration: 0.5,
             type: "tween",
         },
