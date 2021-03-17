@@ -4,12 +4,18 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const animation = {
-    initial: {
+    start: {
         background: "linear-gradient(90deg, #FDF6F9 0%, #EBB02D 0%), #EBB02D",
     },
-    whileHover: {
+    hover: {
         background:
             "linear-gradient(90deg, #FDF6F9 100%, #EBB02D 100%), #EBB02D",
+    },
+    tap: {
+        scale: 0.9,
+        transition: {
+            duration: 0.1,
+        },
     },
     transition: {
         duration: 0.5,
@@ -21,8 +27,9 @@ const Button = ({ text, fontSize, link }) => {
         <StyledButton
             bFontSize={fontSize}
             variants={animation}
-            initial="initial"
-            whileHover="whileHover"
+            initial="start"
+            whileHover="hover"
+            whileTap="tap"
             transition="transition"
         >
             <div>{text}</div>
@@ -34,10 +41,8 @@ const StyledButton = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
     div {
         text-transform: uppercase;
         font-weight: 700;

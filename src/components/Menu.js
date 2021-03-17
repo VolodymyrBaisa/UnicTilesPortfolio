@@ -7,6 +7,10 @@ import { motion } from "framer-motion";
 //Icons
 import menu from "../img/svg/menu.svg";
 
+const menuItemAnimation = {
+    tap: { scale: 0.9 },
+};
+
 const Menu = ({ menuArray }) => {
     const isPageWidthMin800 = useMediaQuery("(min-width: 801px)");
     return (
@@ -15,7 +19,13 @@ const Menu = ({ menuArray }) => {
                 <ul>
                     {menuArray.length > 0 &&
                         menuArray.map((item, index) => (
-                            <motion.li key={index}>{item.text}</motion.li>
+                            <motion.li
+                                key={index}
+                                variants={menuItemAnimation}
+                                whileTap="tap"
+                            >
+                                {item.text}
+                            </motion.li>
                         ))}
                 </ul>
             ) : (

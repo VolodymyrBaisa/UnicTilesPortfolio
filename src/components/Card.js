@@ -20,6 +20,7 @@ const cardAnimation = {
 const learnMoreBtnAnimation = {
     start: { x: 0 },
     hover: { x: 10 },
+    tap: { scale: 0.9 },
 };
 
 const Card = ({ image, headerIcon, headerText, shortText }) => {
@@ -70,6 +71,7 @@ const Card = ({ image, headerIcon, headerText, shortText }) => {
                     variants={learnMoreBtnAnimation}
                     initial="start"
                     whileHover="hover"
+                    whileTap="tap"
                 >
                     <div>Learn More</div>
                     <img src={arrowRight} alt="" />

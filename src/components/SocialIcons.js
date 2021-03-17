@@ -3,6 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+const socialIconAnimation = {
+    tap: { scale: 0.9 },
+};
+
 const SocialIcons = ({ icons }) => {
     return (
         <StyledSocialIcons>
@@ -10,7 +14,12 @@ const SocialIcons = ({ icons }) => {
                 icons.map((icon, index) => {
                     return (
                         <div key={index}>
-                            <img src={icon.icon} alt="" />
+                            <motion.img
+                                src={icon.icon}
+                                alt=""
+                                variants={socialIconAnimation}
+                                whileTap="tap"
+                            />
                         </div>
                     );
                 })}

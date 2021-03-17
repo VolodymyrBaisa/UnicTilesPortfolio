@@ -6,17 +6,29 @@ import { motion } from "framer-motion";
 import phone from "../img/svg/phone.svg";
 import mail from "../img/svg/mail.svg";
 
+const contactsAnimation = {
+    tap: { scale: 0.9 },
+};
+
 const ShortContacts = ({ tPhone, tMail }) => {
     return (
         <StyledShortContacts>
-            <div className="phone-container">
+            <motion.div
+                className="phone-container"
+                variants={contactsAnimation}
+                whileTap="tap"
+            >
                 <img src={phone} alt="Phone icon" />
                 <div>{tPhone}</div>
-            </div>
-            <div className="email-container">
+            </motion.div>
+            <motion.div
+                className="email-container"
+                variants={contactsAnimation}
+                whileTap="tap"
+            >
                 <img src={mail} alt="Mail icon" />
                 <div>{tMail}</div>
-            </div>
+            </motion.div>
         </StyledShortContacts>
     );
 };
