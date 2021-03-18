@@ -9,6 +9,51 @@ import PortfolioSlider from "../components/PortfolioSlider";
 import mask from "../img/svg/mask-down.svg";
 //Utils
 import { useMediaQuery } from "../utils/MediaQuery";
+//Img
+import slider1 from "../img/placeholder/1.jpg";
+import slider2 from "../img/placeholder/2.jpg";
+import slider3 from "../img/placeholder/3.jpg";
+import slider4 from "../img/placeholder/4.jpg";
+
+//Slider Data
+const sliders = [
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+];
 
 const Portfolio = () => {
     const [itemsOnPage, setItemsOnPage] = useState(10);
@@ -28,7 +73,7 @@ const Portfolio = () => {
     return (
         <StyledPortfolio setItemsOnPage={setItemsOnPage}>
             <SectionHeader sText={"Portfolio"} sColor={"#FFFFFF"} />
-            <PortfolioSlider totalItemsOnPage={itemsOnPage} />
+            <PortfolioSlider sliders={sliders} totalItemsOnPage={itemsOnPage} />
             <img className="background-mask" src={mask} alt="" />
         </StyledPortfolio>
     );
@@ -42,7 +87,7 @@ const StyledPortfolio = styled(motion.div)`
     .background-mask {
         position: absolute;
         width: 100%;
-        height: 87rem;
+        height: 88rem;
         top: -5rem;
         left: 0;
         right: 0;
@@ -53,7 +98,7 @@ const StyledPortfolio = styled(motion.div)`
         padding: 10rem 2rem 2rem 2rem;
         height: 79rem;
         .background-mask {
-            height: 84rem;
+            height: 85rem;
         }
     }
 
@@ -61,7 +106,7 @@ const StyledPortfolio = styled(motion.div)`
         height: 67rem;
         padding: 8rem 2rem 2rem 2rem;
         .background-mask {
-            height: 72rem;
+            height: 73rem;
         }
     }
 `;

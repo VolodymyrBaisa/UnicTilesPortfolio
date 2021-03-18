@@ -6,50 +6,6 @@ import { useInView } from "react-intersection-observer";
 //Img
 import leftArrow from "../img/svg/left-arrow.svg";
 import rightArrow from "../img/svg/right-arrow.svg";
-import slider1 from "../img/placeholder/1.jpg";
-import slider2 from "../img/placeholder/2.jpg";
-import slider3 from "../img/placeholder/3.jpg";
-import slider4 from "../img/placeholder/4.jpg";
-
-//Slider Data
-const sliders = [
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-];
 
 const portfolioSliderAnimation = {
     hidden: { y: 20, opacity: 0 },
@@ -82,7 +38,7 @@ const buttonPaginationAnimation = {
     tap: { scale: 0.9 },
 };
 
-const PortfolioSlider = ({ totalItemsOnPage }) => {
+const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -99,6 +55,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
     }, [controls, inView]);
 
     const slider = () => {
+        if (!sliders) return;
         let result = [];
         const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
         for (
@@ -126,6 +83,7 @@ const PortfolioSlider = ({ totalItemsOnPage }) => {
     };
 
     const pagination = () => {
+        if (!sliders) return;
         const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
         let results = [];
         for (let i = 0; i < totalPages; i++) {
