@@ -110,13 +110,13 @@ const StyledServices = styled(motion.div)`
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-content: space-evenly;
-        margin: 0 8rem;
+        margin: 0 6rem;
     }
 
     @media screen and (max-width: 800px) {
         .card-wrapper {
             grid-template-columns: repeat(2, 1fr);
-            margin: 0 4rem;
+            margin: 0 3rem;
         }
     }
 

@@ -88,7 +88,7 @@ const About = () => {
 
 const StyledAbout = styled(motion.div)`
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;

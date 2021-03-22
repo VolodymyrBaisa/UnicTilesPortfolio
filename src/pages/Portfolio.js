@@ -82,7 +82,7 @@ const StyledPortfolio = styled(motion.div)`
     height: 82rem;
     position: relative;
     z-index: 1;
-    padding: 10rem 2rem 2rem 2rem;
+    padding: 10rem 5rem 2rem 5rem;
 
     .background-mask {
         position: absolute;
