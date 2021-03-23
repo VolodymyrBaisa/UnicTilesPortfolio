@@ -9,6 +9,9 @@ import Menu from "../components/Menu";
 import Button from "../components/Button";
 import SocialIcons from "../components/SocialIcons";
 import ShortContacts from "../components/ShortContacts";
+import ContactForm from "../components/ContactForm";
+import Map from "../components/Map";
+import Contacts from "../components/Contacts";
 //Container
 import contactUsBackground from "../img/svg/contact-us-background.svg";
 import maskFooter from "../img/svg/mask_footer.svg";
@@ -35,10 +38,21 @@ const Contact = () => {
             <div className="contact-container">
                 <SectionHeader sText={"Contact us"} sColor={"#FFFFFF"} />
                 <div className="wrapper">
-                    <div className="contact-form">1</div>
+                    <div className="contact-form">
+                        <ContactForm />
+                    </div>
                     <div className="map-contact-information">
-                        <div className="map">2</div>
-                        <div className="contact-information">3</div>
+                        <div className="map">
+                            <Map isMarkerShown />/
+                        </div>
+                        <div className="contact-information">
+                            <Contacts
+                                tAddress={"2537 Post Rd Southport, CT 06890"}
+                                tEmail={"info@unictiles.com"}
+                                tPhone1={"(203) 690-0552"}
+                                tPhone2={"(203) 895-8258"}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,17 +90,21 @@ const StyledContact = styled(motion.div)`
         background-repeat: no-repeat;
         background-size: cover;
         padding: 8rem 0 0 0;
+        pointer-events: none;
 
         .wrapper {
             position: absolute;
             bottom: 0;
             right: 0;
             left: 0;
-            top: 10rem;
+            top: 12rem;
             display: flex;
-            height: calc(100% - 10rem);
+            height: calc(100% - 12rem);
+
             .contact-form {
-                width: 54rem;
+                width: 52rem;
+                padding: 0 2rem;
+                pointer-events: all;
             }
             .map-contact-information {
                 position: relative;
@@ -94,17 +112,24 @@ const StyledContact = styled(motion.div)`
                 width: 100%;
                 display: flex;
                 flex-direction: column;
+                pointer-events: all;
                 .map {
                     flex-basis: 50%;
                     background: #fff;
+                    padding-top: 8rem;
                 }
                 .contact-information {
                     flex-basis: 50%;
                     background: #fff;
+                    border-top: 0.1rem solid #525355;
+                    padding: 2rem;
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
     }
+    /* Footer */
     .footer-container {
         .logo {
             transform: translateY(-2rem);
