@@ -43,7 +43,7 @@ const Contact = () => {
                     </div>
                     <div className="map-contact-information">
                         <div className="map">
-                            <Map isMarkerShown />/
+                            <Map isMarkerShown />
                         </div>
                         <div className="contact-information">
                             <Contacts
@@ -114,12 +114,12 @@ const StyledContact = styled(motion.div)`
                 flex-direction: column;
                 pointer-events: all;
                 .map {
-                    flex-basis: 50%;
+                    height: 30rem;
                     background: #fff;
-                    padding-top: 8rem;
+                    padding-top: 6rem;
                 }
                 .contact-information {
-                    flex-basis: 50%;
+                    height: 100%;
                     background: #fff;
                     border-top: 0.1rem solid #525355;
                     padding: 2rem;

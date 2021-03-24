@@ -12,7 +12,6 @@ html, body {
     font-size: 0.65vw;
     font-family: "Sarabun", sans-serif;
 }
-
 @media screen and (max-width: 1024px) {
         html, body {
             font-size: 0.85vw;
