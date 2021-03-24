@@ -92,6 +92,7 @@ const StyledPortfolio = styled(motion.div)`
         left: 0;
         right: 0;
         z-index: -1;
+        pointer-events: none;
     }
 
     @media screen and (max-width: 1024px) {
