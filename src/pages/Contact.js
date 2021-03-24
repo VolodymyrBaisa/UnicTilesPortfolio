@@ -38,9 +38,9 @@ const Contact = () => {
             <div className="contact-container">
                 <SectionHeader sText={"Contact us"} sColor={"#FFFFFF"} />
                 <div className="wrapper">
-                    <div className="contact-form">
+                    <motion.div className="contact-form">
                         <ContactForm />
-                    </div>
+                    </motion.div>
                     <div className="map-contact-information">
                         <div className="map">
                             <Map isMarkerShown />
