@@ -6,10 +6,8 @@ import { motion } from "framer-motion";
 import SectionHeader from "../../components/SectionHeader";
 import Logo from "../../components/Logo";
 import Menu from "../../components/Menu";
-import Button from "../../components/Button";
 import SocialIcons from "../../components/SocialIcons";
 import ShortContacts from "../../components/ShortContacts";
-import ContactForm from "../../components/ContactForm";
 import Map from "../../components/Map";
 import Contacts from "../../components/Contacts";
 //Container
@@ -92,8 +90,12 @@ const StyledContact = styled(motion.div)`
             background: #fff;
             border-radius: 10rem 0 0 0;
             .contact-information {
-                padding: 3rem 3rem 0 3rem;
+                padding: 3rem 3rem 0 4rem;
                 border-bottom: 0.2rem solid #525355;
+                pointer-events: all;
+            }
+            .map {
+                pointer-events: all;
             }
         }
     }
