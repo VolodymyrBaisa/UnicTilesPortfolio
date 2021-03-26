@@ -155,6 +155,16 @@ const StyledContact = styled(motion.div)`
             background: #29292a;
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        .contact-container {
+            .wrapper {
+                .contact-form {
+                    width: 48rem;
+                }
+            }
+        }
+    }
 `;
 
 export default Contact;

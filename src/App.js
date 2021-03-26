@@ -4,6 +4,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ContactMob from "./pages/mobile/Contact";
 //Utils
 import { useMediaQuery } from "./utils/MediaQuery";
 //Styles
@@ -18,7 +19,7 @@ function App() {
             <Services />
             <Portfolio />
             <About />
-            <Contact />
+            {isPageWidthMin800 ? <Contact /> : <ContactMob />}
         </>
     );
 }
