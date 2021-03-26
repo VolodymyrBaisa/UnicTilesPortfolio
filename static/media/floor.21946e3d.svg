@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
+    <rect x="0.5" y="1.427" width="31" height="31" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0.5" y="1.427" width="31" height="31"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,6.28641,-1.43966)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,6.46128,8.3787)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,15.8131,-4.63351)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,5.611,19.5242)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,14.9629,6.51176)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,24.3207,-6.5046)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,9.30607,24.3697)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,18.658,11.3572)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,28.0158,-1.65914)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,16.9968,23.5777)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,26.3487,10.5652)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,35.7065,-2.45113)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,19.8118,29.6101)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,29.1637,16.5977)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(0.806156,0.591703,-0.583767,0.811921,38.5215,3.58109)">
+                <rect x="0.111" y="0.702" width="5.778" height="15.999" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+            </g>
+        </g>
+    </g>
+    <rect x="0.5" y="1.427" width="31" height="31" style="fill:none;stroke:rgb(70,66,61);stroke-width:1px;"/>
+</svg>
