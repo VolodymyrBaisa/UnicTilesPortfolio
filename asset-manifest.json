@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/UnicTilesPortfolio/static/js/main.f381ed51.chunk.js",
-    "main.js.map": "/UnicTilesPortfolio/static/js/main.f381ed51.chunk.js.map",
-    "runtime-main.js": "/UnicTilesPortfolio/static/js/runtime-main.2747cfde.js",
-    "runtime-main.js.map": "/UnicTilesPortfolio/static/js/runtime-main.2747cfde.js.map",
+    "main.js": "/UnicTilesPortfolio/static/js/main.6ba5768c.chunk.js",
+    "main.js.map": "/UnicTilesPortfolio/static/js/main.6ba5768c.chunk.js.map",
+    "runtime-main.js": "/UnicTilesPortfolio/static/js/runtime-main.920d3331.js",
+    "runtime-main.js.map": "/UnicTilesPortfolio/static/js/runtime-main.920d3331.js.map",
     "static/css/2.b4ebbe46.chunk.css": "/UnicTilesPortfolio/static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.f5646ea1.chunk.js": "/UnicTilesPortfolio/static/js/2.f5646ea1.chunk.js",
-    "static/js/2.f5646ea1.chunk.js.map": "/UnicTilesPortfolio/static/js/2.f5646ea1.chunk.js.map",
-    "static/js/3.ef442b98.chunk.js": "/UnicTilesPortfolio/static/js/3.ef442b98.chunk.js",
-    "static/js/3.ef442b98.chunk.js.map": "/UnicTilesPortfolio/static/js/3.ef442b98.chunk.js.map",
+    "static/js/2.3c4ca95e.chunk.js": "/UnicTilesPortfolio/static/js/2.3c4ca95e.chunk.js",
+    "static/js/2.3c4ca95e.chunk.js.map": "/UnicTilesPortfolio/static/js/2.3c4ca95e.chunk.js.map",
+    "static/js/3.569448c5.chunk.js": "/UnicTilesPortfolio/static/js/3.569448c5.chunk.js",
+    "static/js/3.569448c5.chunk.js.map": "/UnicTilesPortfolio/static/js/3.569448c5.chunk.js.map",
     "index.html": "/UnicTilesPortfolio/index.html",
     "static/css/2.b4ebbe46.chunk.css.map": "/UnicTilesPortfolio/static/css/2.b4ebbe46.chunk.css.map",
-    "static/js/2.f5646ea1.chunk.js.LICENSE.txt": "/UnicTilesPortfolio/static/js/2.f5646ea1.chunk.js.LICENSE.txt",
+    "static/js/2.3c4ca95e.chunk.js.LICENSE.txt": "/UnicTilesPortfolio/static/js/2.3c4ca95e.chunk.js.LICENSE.txt",
     "static/media/1.68d9af60.jpg": "/UnicTilesPortfolio/static/media/1.68d9af60.jpg",
     "static/media/2.225c0197.jpg": "/UnicTilesPortfolio/static/media/2.225c0197.jpg",
     "static/media/3.d8d16611.jpg": "/UnicTilesPortfolio/static/media/3.d8d16611.jpg",
@@ -57,9 +57,9 @@
     "static/media/wrench.502d0bb6.svg": "/UnicTilesPortfolio/static/media/wrench.502d0bb6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2747cfde.js",
+    "static/js/runtime-main.920d3331.js",
     "static/css/2.b4ebbe46.chunk.css",
-    "static/js/2.f5646ea1.chunk.js",
-    "static/js/main.f381ed51.chunk.js"
+    "static/js/2.3c4ca95e.chunk.js",
+    "static/js/main.6ba5768c.chunk.js"
   ]
 }
