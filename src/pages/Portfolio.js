@@ -71,7 +71,7 @@ const Portfolio = () => {
     }, [isPageWidthMin1024, isPageWidthMin800, isPageWidthMin600, itemsOnPage]);
 
     return (
-        <StyledPortfolio setItemsOnPage={setItemsOnPage}>
+        <StyledPortfolio setItemsOnPage={setItemsOnPage} id="portfolio">
             <SectionHeader sText={"Portfolio"} sColor={"#FFFFFF"} />
             <PortfolioSlider sliders={sliders} totalItemsOnPage={itemsOnPage} />
             <img className="background-mask" src={mask} alt="" />

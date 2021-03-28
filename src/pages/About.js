@@ -39,7 +39,7 @@ const About = () => {
     }, [controls, inView]);
 
     return (
-        <StyledAbout>
+        <StyledAbout id="about us">
             {/* Figure for background */}
             <img className="figure-top-left" src={figureTopLeft} alt="" />
             <img className="figure-top-right" src={figureTopRight} alt="" />

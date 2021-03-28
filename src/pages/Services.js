@@ -91,7 +91,7 @@ const cards = [
 
 const Services = () => {
     return (
-        <StyledServices>
+        <StyledServices id="tile services">
             <SectionHeader sText={"Our Services"} sColor={"#46423D"} />
             <div className="card-wrapper">
                 {cards.length > 0 &&

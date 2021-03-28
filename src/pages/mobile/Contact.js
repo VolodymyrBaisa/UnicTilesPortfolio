@@ -23,7 +23,6 @@ const menuArray = [
     { text: "Portfolio", link: "#" },
     { text: "About Us", link: "#" },
     { text: "Contact", link: "#" },
-    { text: "Get Free Quote", link: "#" },
 ];
 
 const socialIcons = [
@@ -33,7 +32,7 @@ const socialIcons = [
 
 const Contact = () => {
     return (
-        <StyledContact bg={contactUsBackground} mask={maskFooter}>
+        <StyledContact bg={contactUsBackground} mask={maskFooter} id="contact">
             <div className="contact-container">
                 <SectionHeader sText={"Contact us"} sColor={"#FFFFFF"} />
                 <div className="wrapper">

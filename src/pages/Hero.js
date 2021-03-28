@@ -37,7 +37,7 @@ const menuArray = [
 
 const Hero = () => {
     return (
-        <StyledHero>
+        <StyledHero id="home">
             <div className="header-container">
                 {/* Logo */}
                 <Logo />

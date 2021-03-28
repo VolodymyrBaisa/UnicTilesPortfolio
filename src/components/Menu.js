@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 //Utils
 import { useMediaQuery } from "../utils/MediaQuery";
 //Styling and Animation
@@ -87,7 +88,13 @@ const Menu = ({ menuArray }) => {
                                 variants={menuClickItemAnimation}
                                 whileTap="tap"
                             >
-                                {item.text}
+                                <Link
+                                    to={item.text.toLowerCase()}
+                                    smooth={true}
+                                    duration={800}
+                                >
+                                    {item.text}
+                                </Link>
                             </motion.li>
                         ))}
                 </ul>
@@ -133,7 +140,18 @@ const Menu = ({ menuArray }) => {
                                                 animate="open"
                                                 exit="close"
                                             >
-                                                {item.text}
+                                                <Link
+                                                    to={item.text.toLowerCase()}
+                                                    smooth={true}
+                                                    duration={800}
+                                                    onClick={() =>
+                                                        setIsMobileMenuShow(
+                                                            false
+                                                        )
+                                                    }
+                                                >
+                                                    {item.text}
+                                                </Link>
                                             </motion.li>
                                         ))}
                                 </motion.ul>
