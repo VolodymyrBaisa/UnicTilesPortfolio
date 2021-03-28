@@ -23,8 +23,11 @@ import slider4 from "../img/placeholder/4.jpg";
 const sliders = [slider1, slider2, slider3, slider4];
 
 const socialIcons = [
-    { icon: instagram, link: "#" },
-    { icon: facebook, link: "#" },
+    { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
+    {
+        icon: facebook,
+        link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
+    },
 ];
 
 const menuArray = [

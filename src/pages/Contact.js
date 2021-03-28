@@ -28,8 +28,11 @@ const menuArray = [
 ];
 
 const socialIcons = [
-    { icon: instagram, link: "#" },
-    { icon: facebook, link: "#" },
+    { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
+    {
+        icon: facebook,
+        link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
+    },
 ];
 
 const Contact = () => {

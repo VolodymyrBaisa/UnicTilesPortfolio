@@ -19,7 +19,7 @@ const ShortContacts = ({ tPhone, tMail }) => {
                 whileTap="tap"
             >
                 <img src={phone} alt="Phone icon" />
-                <div>{tPhone}</div>
+                <a href={"tel:" + tPhone}>{tPhone}</a>
             </motion.div>
             <motion.div
                 className="email-container"
@@ -27,7 +27,7 @@ const ShortContacts = ({ tPhone, tMail }) => {
                 whileTap="tap"
             >
                 <img src={mail} alt="Mail icon" />
-                <div>{tMail}</div>
+                <a href={"mailto:" + tMail}>{tMail}</a>
             </motion.div>
         </StyledShortContacts>
     );
@@ -65,11 +65,12 @@ const StyledShortContacts = styled(motion.div)`
             height: 2.8rem;
         }
         /*Phone*/
-        div {
+        a {
             margin: 0 0.5vw;
             color: #ffffff;
             font-weight: 600;
             font-size: 2.2rem;
+            text-decoration: none;
         }
     }
 

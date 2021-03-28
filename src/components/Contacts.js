@@ -30,7 +30,12 @@ const Contacts = ({ tAddress, tEmail, tPhone1, tPhone2 }) => {
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
             >
                 <img src={mapPin} alt="Map pin icon" />
-                <div>{tAddress}</div>
+                <a
+                    href={"http://maps.google.com/?q=" + tAddress}
+                    target="_blank"
+                >
+                    {tAddress}
+                </a>
             </motion.div>
             <motion.div
                 className="container"
@@ -39,7 +44,7 @@ const Contacts = ({ tAddress, tEmail, tPhone1, tPhone2 }) => {
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
             >
                 <img src={email} alt="Email icon" />
-                <div>{tEmail}</div>
+                <a href={"mailto:" + tEmail}>{tEmail}</a>
             </motion.div>
             <motion.div
                 className="container"
@@ -48,7 +53,7 @@ const Contacts = ({ tAddress, tEmail, tPhone1, tPhone2 }) => {
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
             >
                 <img src={phone} alt="Phone icon" />
-                <div>{tPhone1}</div>
+                <a href={"tel:" + tPhone1}>{tPhone1}</a>
             </motion.div>
             <motion.div
                 className="container"
@@ -57,7 +62,7 @@ const Contacts = ({ tAddress, tEmail, tPhone1, tPhone2 }) => {
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
             >
                 <img src={phone} alt="Phone icon" />
-                <div>{tPhone2}</div>
+                <a href={"tel:" + tPhone2}>{tPhone2}</a>
             </motion.div>
         </StyledContacts>
     );
@@ -94,13 +99,13 @@ const StyledContacts = styled(motion.div)`
             height: 2.8rem;
             pointer-events: none;
         }
-        /*Phone*/
-        div {
+        /*Phone, Email, Address*/
+        a {
             margin: 0 0.5vw;
             color: #525355;
             font-weight: 800;
             font-size: 2.2rem;
-            pointer-events: none;
+            text-decoration: none;
         }
     }
 

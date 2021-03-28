@@ -14,12 +14,14 @@ const SocialIcons = ({ icons }) => {
                 icons.map((icon, index) => {
                     return (
                         <div key={index}>
-                            <motion.img
-                                src={icon.icon}
-                                alt=""
-                                variants={socialIconAnimation}
-                                whileTap="tap"
-                            />
+                            <a href={icon.link} target="_blank">
+                                <motion.img
+                                    src={icon.icon}
+                                    alt=""
+                                    variants={socialIconAnimation}
+                                    whileTap="tap"
+                                />
+                            </a>
                         </div>
                     );
                 })}
