@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/UnicTilesPortfolio/static/js/main.ca996c1e.chunk.js",
-    "main.js.map": "/UnicTilesPortfolio/static/js/main.ca996c1e.chunk.js.map",
+    "main.js": "/UnicTilesPortfolio/static/js/main.74dccfd5.chunk.js",
+    "main.js.map": "/UnicTilesPortfolio/static/js/main.74dccfd5.chunk.js.map",
     "runtime-main.js": "/UnicTilesPortfolio/static/js/runtime-main.2747cfde.js",
     "runtime-main.js.map": "/UnicTilesPortfolio/static/js/runtime-main.2747cfde.js.map",
     "static/css/2.b4ebbe46.chunk.css": "/UnicTilesPortfolio/static/css/2.b4ebbe46.chunk.css",
@@ -59,6 +59,6 @@
     "static/js/runtime-main.2747cfde.js",
     "static/css/2.b4ebbe46.chunk.css",
     "static/js/2.f5646ea1.chunk.js",
-    "static/js/main.ca996c1e.chunk.js"
+    "static/js/main.74dccfd5.chunk.js"
   ]
 }
