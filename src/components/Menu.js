@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 //Icons
 import menu from "../img/svg/menu.svg";
 import menuClose from "../img/svg/menu-close.svg";
+import logo from "../img/svg/logo2.svg";
 
 const menuClickItemAnimation = {
     tap: { scale: 0.9 },
@@ -40,6 +41,22 @@ const menuOpenItemAnimation = {
     },
     close: {
         x: -50,
+        opacity: 0,
+        transition: {
+            x: { stiffness: 1000 },
+        },
+    },
+};
+
+const menuOpenHeaderAnimation = {
+    open: {
+        opacity: 1,
+        transition: {
+            delay: 1,
+            x: { stiffness: 1000, velocity: -100 },
+        },
+    },
+    close: {
         opacity: 0,
         transition: {
             x: { stiffness: 1000 },
@@ -91,6 +108,20 @@ const Menu = ({ menuArray }) => {
                                 animate="open"
                                 exit="close"
                             >
+                                <motion.div
+                                    className="mobile-menu-header"
+                                    variants={menuOpenHeaderAnimation}
+                                    initial="close"
+                                    animate="open"
+                                    exit="close"
+                                >
+                                    <img
+                                        className="logo"
+                                        src={logo}
+                                        alt="logo"
+                                    />
+                                    <div className="logo-text">Unic Tiles</div>
+                                </motion.div>
                                 <motion.ul>
                                     {menuArray.length > 0 &&
                                         menuArray.map((item, index) => (
@@ -161,13 +192,30 @@ const StyledMenu = styled(motion.div)`
         height: 100vh;
         background: #fff;
         border-right: 0.2rem solid #27272b;
-
+        .mobile-menu-header {
+            width: 100%;
+            height: 7.5rem;
+            background: #ebb02d;
+            display: flex;
+            align-items: center;
+            .logo {
+                height: 7rem;
+                margin: 0 0.5rem;
+            }
+            .logo-text {
+                text-transform: uppercase;
+                font-size: 4rem;
+                font-weight: bold;
+                color: #46423d;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
         ul {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 70rem;
+            height: 60rem;
             li {
                 color: #46423d;
                 font-size: 4rem;
