@@ -169,28 +169,11 @@ const StyledMenu = styled(motion.div)`
             align-items: center;
             height: 70rem;
             li {
-                position: relative;
                 color: #46423d;
                 font-size: 4rem;
                 font-weight: bold;
-                list-style: none;
-                cursor: pointer;
+                margin-left: 0;
                 margin-bottom: 2rem;
-                &:after {
-                    transition: all 0.2s ease;
-                    position: absolute;
-                    content: "";
-                    display: block;
-                    width: 0;
-                    overflow: hidden;
-                    border-bottom: 0.4rem solid #ebb02d;
-                    margin-top: 0.6rem;
-                    -webkit-transition: all 0.3s ease;
-                    transition: all 0.3s ease;
-                }
-                &:hover:after {
-                    width: 100%;
-                }
             }
         }
 
