@@ -105,6 +105,7 @@ const StyledServices = styled(motion.div)`
     min-height: 70rem;
     position: relative;
     z-index: 0;
+    margin-top: 2rem;
 
     .card-wrapper {
         display: grid;

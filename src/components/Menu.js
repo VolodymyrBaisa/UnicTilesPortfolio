@@ -1,18 +1,64 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 //Utils
 import { useMediaQuery } from "../utils/MediaQuery";
 //Styling and Animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 //Icons
 import menu from "../img/svg/menu.svg";
+import menuClose from "../img/svg/menu-close.svg";
 
-const menuItemAnimation = {
+const menuClickItemAnimation = {
     tap: { scale: 0.9 },
 };
 
+const openMenuAnimation = {
+    close: {
+        width: 0,
+        transition: {
+            duration: 1.2,
+            ease: [0.83, 0, 0.17, 1],
+        },
+    },
+    open: {
+        width: 70 + "vw",
+        transition: {
+            duration: 1.2,
+            ease: [0.83, 0, 0.17, 1],
+        },
+    },
+};
+
+const menuOpenItemAnimation = {
+    open: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            delay: 1,
+            x: { stiffness: 1000, velocity: -100 },
+        },
+    },
+    close: {
+        x: -50,
+        opacity: 0,
+        transition: {
+            x: { stiffness: 1000 },
+        },
+    },
+};
+
 const Menu = ({ menuArray }) => {
+    const [isMobileMenuShow, setIsMobileMenuShow] = useState(false);
     const isPageWidthMin800 = useMediaQuery("(min-width: 801px)");
+
+    const scrollbar = () => {
+        document.body.style.overflow = isMobileMenuShow ? "hidden" : null;
+    };
+
+    useEffect(() => {
+        scrollbar();
+    }, [isMobileMenuShow]);
+
     return (
         <StyledMenu>
             {isPageWidthMin800 ? (
@@ -21,7 +67,7 @@ const Menu = ({ menuArray }) => {
                         menuArray.map((item, index) => (
                             <motion.li
                                 key={index}
-                                variants={menuItemAnimation}
+                                variants={menuClickItemAnimation}
                                 whileTap="tap"
                             >
                                 {item.text}
@@ -29,7 +75,41 @@ const Menu = ({ menuArray }) => {
                         ))}
                 </ul>
             ) : (
-                <img className="menu" src={menu} alt="Main menu" />
+                <>
+                    <img
+                        className="menu"
+                        onClick={() => setIsMobileMenuShow(!isMobileMenuShow)}
+                        src={isMobileMenuShow ? menuClose : menu}
+                        alt="Main menu"
+                    />
+                    <AnimatePresence>
+                        {isMobileMenuShow && (
+                            <motion.div
+                                className="mobile-menu-wrapper"
+                                variants={openMenuAnimation}
+                                initial="close"
+                                animate="open"
+                                exit="close"
+                            >
+                                <motion.ul>
+                                    {menuArray.length > 0 &&
+                                        menuArray.map((item, index) => (
+                                            <motion.li
+                                                key={index}
+                                                variants={menuOpenItemAnimation}
+                                                whileTap="tap"
+                                                initial="close"
+                                                animate="open"
+                                                exit="close"
+                                            >
+                                                {item.text}
+                                            </motion.li>
+                                        ))}
+                                </motion.ul>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </>
             )}
         </StyledMenu>
     );
@@ -70,6 +150,53 @@ const StyledMenu = styled(motion.div)`
     .menu {
         width: 3.5rem;
         cursor: pointer;
+    }
+
+    .mobile-menu-wrapper {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        background: #fff;
+        border-right: 0.2rem solid #27272b;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70rem;
+            li {
+                position: relative;
+                color: #46423d;
+                font-size: 4rem;
+                font-weight: bold;
+                list-style: none;
+                cursor: pointer;
+                margin-bottom: 2rem;
+                &:after {
+                    transition: all 0.2s ease;
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    width: 0;
+                    overflow: hidden;
+                    border-bottom: 0.4rem solid #ebb02d;
+                    margin-top: 0.6rem;
+                    -webkit-transition: all 0.3s ease;
+                    transition: all 0.3s ease;
+                }
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
     }
 `;
 

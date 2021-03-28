@@ -55,9 +55,6 @@ const Slider = ({ sliders, interval }) => {
 };
 
 const StyledSlider = styled(motion.div)`
-    position: absolute;
-    top: 4rem;
-    left: 0;
     height: 68rem;
     width: 100%;
 

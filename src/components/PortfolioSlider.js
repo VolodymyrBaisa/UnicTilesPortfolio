@@ -89,12 +89,12 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
         for (let i = 0; i < totalPages; i++) {
             if (i <= 10) {
                 if (i === page - 1)
-                    results.push(<div className="dot active"></div>);
-                else results.push(<div className="dot"></div>);
+                    results.push(<div key={i} className="dot active"></div>);
+                else results.push(<div key={i} className="dot"></div>);
             } else if (page > 10) {
-                results[10] = <div className="dot active"></div>;
+                results[10] = <div key={i} className="dot active"></div>;
             } else {
-                results[page] = <div className="dot"></div>;
+                results[page] = <div key={i} className="dot"></div>;
             }
         }
 

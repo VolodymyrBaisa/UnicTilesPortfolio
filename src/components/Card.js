@@ -118,6 +118,7 @@ const StyledCard = styled(motion.div)`
             }
         }
         .short-description {
+            display: flex;
             font-style: normal;
             font-weight: normal;
             font-size: 1.8rem;

@@ -47,11 +47,13 @@ const Hero = () => {
                     />
                 </div>
                 {/* Logo */}
-                <Logo />
+                <div className="logo">
+                    <Logo />
+                </div>
                 {/* Menu */}
                 <div className="social-icons-and-menu-container">
                     <SocialIcons icons={socialIcons} />
-                    <Menu menuArray={menuArray} />
+                    <Menu menuArray={menuArray} isHeaderMenu={true} />
                 </div>
             </div>
             {/* Page Content */}
@@ -84,9 +86,14 @@ const StyledHero = styled(motion.div)`
             padding: 1.1rem 1rem;
             z-index: inherit;
         }
+        .logo {
+            position: relative;
+            z-index: 2;
+            height: 12rem;
+        }
         .social-icons-and-menu-container {
-            position: absolute;
-            top: 18rem;
+            position: relative;
+            top: 0.2rem;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -98,13 +105,19 @@ const StyledHero = styled(motion.div)`
     }
     .page-content-container {
         z-index: 1;
-        position: relative;
-        top: 2.7rem;
+        position: absolute;
+        top: 12.5rem;
+        width: 100%;
         .get-free-quote {
-            position: relative;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 2;
-            top: 35rem;
-            margin: 0 8rem;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
     }
     .background-mask {

@@ -121,12 +121,13 @@ const StyledHero = styled(motion.div)`
         }
     }
     .page-content-container {
+        position: relative;
+        top: 4rem;
         z-index: 1;
-
         .get-quote {
             position: absolute;
             width: 36rem;
-            top: 23rem;
+            top: 18rem;
             z-index: 1;
         }
     }

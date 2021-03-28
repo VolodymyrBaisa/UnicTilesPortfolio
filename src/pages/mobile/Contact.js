@@ -73,7 +73,6 @@ const Contact = () => {
 };
 
 const StyledContact = styled(motion.div)`
-    position: relative;
     z-index: 1;
     background: #b8b8b8;
     .contact-container {
