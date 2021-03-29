@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/UnicTilesPortfolio/static/js/main.6ba5768c.chunk.js",
-    "main.js.map": "/UnicTilesPortfolio/static/js/main.6ba5768c.chunk.js.map",
+    "main.js": "/UnicTilesPortfolio/static/js/main.7f4c4a4c.chunk.js",
+    "main.js.map": "/UnicTilesPortfolio/static/js/main.7f4c4a4c.chunk.js.map",
     "runtime-main.js": "/UnicTilesPortfolio/static/js/runtime-main.920d3331.js",
     "runtime-main.js.map": "/UnicTilesPortfolio/static/js/runtime-main.920d3331.js.map",
     "static/css/2.b4ebbe46.chunk.css": "/UnicTilesPortfolio/static/css/2.b4ebbe46.chunk.css",
@@ -31,6 +31,7 @@
     "static/media/floor.21946e3d.svg": "/UnicTilesPortfolio/static/media/floor.21946e3d.svg",
     "static/media/floor.716993f0.jpg": "/UnicTilesPortfolio/static/media/floor.716993f0.jpg",
     "static/media/forkknife.c57dc31d.svg": "/UnicTilesPortfolio/static/media/forkknife.c57dc31d.svg",
+    "static/media/homeadvisor.3e5452be.svg": "/UnicTilesPortfolio/static/media/homeadvisor.3e5452be.svg",
     "static/media/instagram.91d336d1.svg": "/UnicTilesPortfolio/static/media/instagram.91d336d1.svg",
     "static/media/keyboard_arrow_right.a89150ec.svg": "/UnicTilesPortfolio/static/media/keyboard_arrow_right.a89150ec.svg",
     "static/media/kitchen.fc294ff4.jpg": "/UnicTilesPortfolio/static/media/kitchen.fc294ff4.jpg",
@@ -60,6 +61,6 @@
     "static/js/runtime-main.920d3331.js",
     "static/css/2.b4ebbe46.chunk.css",
     "static/js/2.3c4ca95e.chunk.js",
-    "static/js/main.6ba5768c.chunk.js"
+    "static/js/main.7f4c4a4c.chunk.js"
   ]
 }
