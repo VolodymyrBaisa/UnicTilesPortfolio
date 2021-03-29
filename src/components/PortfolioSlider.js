@@ -61,10 +61,12 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
     const [page, setPage] = useState(1);
     const [selectedSliderId, setSelectedSliderId] = useState(null);
 
+    let totalPages = 0;
+
     const slider = () => {
         if (!sliders) return;
         let result = [];
-        const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
+        totalPages = Math.ceil(sliders.length / totalItemsOnPage);
         for (
             let i = (page - 1) * totalItemsOnPage;
             i < totalItemsOnPage * page &&
@@ -93,7 +95,7 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
 
     const pagination = () => {
         if (!sliders) return;
-        const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
+        console.log(totalPages);
         let results = [];
         for (let i = 0; i < totalPages; i++) {
             if (i <= 10) {
@@ -111,7 +113,6 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
     };
 
     const onClickIncreasePage = () => {
-        const totalPages = Math.ceil(sliders.length / totalItemsOnPage);
         if (page < totalPages) setPage(page + 1);
     };
     const onClickDecreasePage = () => {
@@ -143,31 +144,33 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
                     )}
                 </AnimatePresence>
             </AnimateSharedLayout>
-            <div className="pagination-wrapper">
-                <motion.img
-                    className="arrow-left"
-                    src={leftArrow}
-                    alt="arrow left"
-                    variants={buttonPaginationAnimation}
-                    initial="start"
-                    whileHover="hover"
-                    whileTap="tap"
-                    onClick={onClickDecreasePage}
-                />
-                <div className="pagination">
-                    <div className="background">{pagination()}</div>
+            {totalPages > 1 && (
+                <div className="pagination-wrapper">
+                    <motion.img
+                        className="arrow-left"
+                        src={leftArrow}
+                        alt="arrow left"
+                        variants={buttonPaginationAnimation}
+                        initial="start"
+                        whileHover="hover"
+                        whileTap="tap"
+                        onClick={onClickDecreasePage}
+                    />
+                    <div className="pagination">
+                        <div className="background">{pagination()}</div>
+                    </div>
+                    <motion.img
+                        className="arrow-right"
+                        src={rightArrow}
+                        alt="arrow right"
+                        variants={buttonPaginationAnimation}
+                        initial="start"
+                        whileHover="hover"
+                        whileTap="tap"
+                        onClick={onClickIncreasePage}
+                    />
                 </div>
-                <motion.img
-                    className="arrow-right"
-                    src={rightArrow}
-                    alt="arrow right"
-                    variants={buttonPaginationAnimation}
-                    initial="start"
-                    whileHover="hover"
-                    whileTap="tap"
-                    onClick={onClickIncreasePage}
-                />
-            </div>
+            )}
         </StyledPortfolioSlider>
     );
 };

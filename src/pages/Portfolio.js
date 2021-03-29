@@ -16,44 +16,7 @@ import slider3 from "../img/placeholder/3.jpg";
 import slider4 from "../img/placeholder/4.jpg";
 
 //Slider Data
-const sliders = [
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-];
+const sliders = [slider1, slider2, slider3, slider4, slider1];
 
 const Portfolio = () => {
     const [itemsOnPage, setItemsOnPage] = useState(10);
