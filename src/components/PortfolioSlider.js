@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 //Styling and Animation
 import styled from "styled-components";
-import { motion, useAnimation } from "framer-motion";
+import {
+    motion,
+    useAnimation,
+    AnimateSharedLayout,
+    AnimatePresence,
+} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 //Img
 import leftArrow from "../img/svg/left-arrow.svg";
@@ -43,7 +48,6 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
-    const [page, setPage] = useState(1);
 
     useEffect(() => {
         if (inView) {
@@ -53,6 +57,9 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
             controls.start("hidden");
         }
     }, [controls, inView]);
+
+    const [page, setPage] = useState(1);
+    const [selectedSliderId, setSelectedSliderId] = useState(null);
 
     const slider = () => {
         if (!sliders) return;
@@ -72,10 +79,12 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
                     initial="start"
                     whileHover="hover"
                     whileTap="tap"
-                    className="imgCard"
+                    className="img-card"
                     src={sliders[i]}
                     alt=""
                     key={i}
+                    layoutId={i + 1}
+                    onClick={() => setSelectedSliderId(i)}
                 />
             );
         }
@@ -116,7 +125,24 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
             animate={controls}
             initial="hidden"
         >
-            <div className="slider">{slider()}</div>
+            <AnimateSharedLayout type="crossfade">
+                <div className="slider">{slider()}</div>
+                <AnimatePresence>
+                    {(selectedSliderId || selectedSliderId === 0) && (
+                        <motion.div>
+                            <motion.div className="slider-popup-wrapper">
+                                <motion.img
+                                    layoutId={selectedSliderId + 1}
+                                    className="img-card-popup"
+                                    src={sliders[selectedSliderId]}
+                                    alt=""
+                                    onClick={() => setSelectedSliderId(null)}
+                                />
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </AnimateSharedLayout>
             <div className="pagination-wrapper">
                 <motion.img
                     className="arrow-left"
@@ -145,6 +171,7 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
         </StyledPortfolioSlider>
     );
 };
+
 const StyledPortfolioSlider = styled(motion.div)`
     display: flex;
     flex-direction: column;
@@ -157,7 +184,7 @@ const StyledPortfolioSlider = styled(motion.div)`
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        .imgCard {
+        .img-card {
             object-fit: cover;
             width: 26.5rem;
             border: 5px solid #27272b;
@@ -206,9 +233,29 @@ const StyledPortfolioSlider = styled(motion.div)`
         }
     }
 
+    .slider-popup-wrapper {
+        position: absolute;
+        top: 9rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .img-card-popup {
+            object-fit: cover;
+            width: 80%;
+            height: 82%;
+            border: 0.5rem solid #27272b;
+            background: #27272b;
+        }
+    }
+
     @media screen and (max-width: 1024px) {
         .slider {
-            .imgCard {
+            .img-card {
                 width: 25rem;
             }
         }
@@ -216,16 +263,31 @@ const StyledPortfolioSlider = styled(motion.div)`
 
     @media screen and (max-width: 800px) {
         .slider {
-            .imgCard {
+            .img-card {
                 width: 24rem;
+            }
+        }
+
+        .slider-popup-wrapper {
+            top: 7.5rem;
+            .img-card-popup {
+                width: 80%;
+                height: 77%;
             }
         }
     }
 
     @media screen and (max-width: 600px) {
         .slider {
-            .imgCard {
+            .img-card {
                 width: 43rem;
+            }
+        }
+
+        .slider-popup-wrapper {
+            .img-card-popup {
+                width: 100%;
+                height: 75%;
             }
         }
     }
