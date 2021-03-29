@@ -16,6 +16,7 @@ import maskFooter from "../../img/svg/mask_footer.svg";
 //Icons
 import instagram from "../../img/svg/instagram.svg";
 import facebook from "../../img/svg/facebook.svg";
+import homeadvisor from "../../img/svg/homeadvisor.svg";
 
 const menuArray = [
     { text: "Home", link: "#" },
@@ -30,6 +31,10 @@ const socialIcons = [
     {
         icon: facebook,
         link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
+    },
+    {
+        icon: homeadvisor,
+        link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
     },
 ];
 

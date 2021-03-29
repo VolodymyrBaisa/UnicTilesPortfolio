@@ -12,6 +12,7 @@ import Button from "../../components/Button";
 //Icons
 import instagram from "../../img/svg/instagram.svg";
 import facebook from "../../img/svg/facebook.svg";
+import homeadvisor from "../../img/svg/homeadvisor.svg";
 //Containers
 import mask from "../../img/svg/mask-up.svg";
 //Img
@@ -27,6 +28,10 @@ const socialIcons = [
     {
         icon: facebook,
         link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
+    },
+    {
+        icon: homeadvisor,
+        link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
     },
 ];
 
