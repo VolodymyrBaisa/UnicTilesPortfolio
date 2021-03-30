@@ -23,7 +23,14 @@ const learnMoreBtnAnimation = {
     tap: { scale: 0.9 },
 };
 
-const Card = ({ image, headerIcon, headerText, shortText }) => {
+const Card = ({
+    image,
+    headerIcon,
+    headerText,
+    shortText,
+    index,
+    setSelectedCardId,
+}) => {
     const controls = useAnimation();
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -44,9 +51,10 @@ const Card = ({ image, headerIcon, headerText, shortText }) => {
             variants={cardAnimation}
             animate={controls}
             initial="hidden"
+            layoutId={index + 1}
         >
             {image && (
-                <img
+                <motion.img
                     className="image"
                     src={Object.values(image)}
                     alt={headerText}
@@ -72,6 +80,7 @@ const Card = ({ image, headerIcon, headerText, shortText }) => {
                     initial="start"
                     whileHover="hover"
                     whileTap="tap"
+                    onClick={() => setSelectedCardId(index)}
                 >
                     <div>Learn More</div>
                     <img src={arrowRight} alt="" />
@@ -147,11 +156,13 @@ const StyledCard = styled(motion.div)`
                 letter-spacing: 0.095em;
                 color: #ebb02d;
                 text-transform: uppercase;
+                pointer-events: none;
             }
             img {
                 display: inline-block;
                 margin-left: 1rem;
                 width: 2rem;
+                pointer-events: none;
             }
         }
     }

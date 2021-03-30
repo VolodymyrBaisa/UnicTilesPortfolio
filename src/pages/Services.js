@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 //Styling and Animation
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 //Components
 import SectionHeader from "../components/SectionHeader";
 import Card from "../components/Card";
+import LearnMorePopUp from "../components/LearnMorePopUp";
 //Images
 import backsplash from "../img/services/backsplash.jpg";
 import bathroom from "../img/services/bathroom.jpg";
@@ -32,7 +33,9 @@ const cards = [
         Every size bathroom deserves the same care 
         and expertise. 
         Let Unic Tiles team turn them into comfortable, inviting retreats.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
     {
         image: { repair_removal },
@@ -41,7 +44,9 @@ const cards = [
         shortText: `We start with a free in-home estimate to assess 
         your specific situation. Our skilled tile installers 
         know all of the s and outs and can spot potential problem areas before they become actual issues.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
     {
         image: { kitchen },
@@ -52,7 +57,9 @@ const cards = [
         show you samples, discuss your preferences, 
         consider your budget and find the right 
         solution for your project.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
     {
         image: { floor },
@@ -65,7 +72,9 @@ const cards = [
         Every size bathroom deserves the same care 
         and expertise. 
         Let Unic Tiles team turn them into comfortable, inviting retreats.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
     {
         image: { backsplash },
@@ -74,7 +83,9 @@ const cards = [
         shortText: `We start with a free in-home estimate to assess 
         your specific situation. Our skilled tile installers 
         know all of the s and outs and can spot potential problem areas before they become actual issues.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
     {
         image: { stone },
@@ -85,18 +96,43 @@ const cards = [
         show you samples, discuss your preferences, 
         consider your budget and find the right 
         solution for your project.`,
-        longText: `long text`,
+        longText: `What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        `,
     },
 ];
 
 const Services = () => {
+    const [selectedCardId, setSelectedCardId] = useState(1);
     return (
         <StyledServices id="tile services">
             <SectionHeader sText={"Our Services"} sColor={"#46423D"} />
-            <div className="card-wrapper">
-                {cards.length > 0 &&
-                    cards.map((card, index) => <Card {...card} key={index} />)}
-            </div>
+            <AnimateSharedLayout type="crossfade">
+                <div className="card-wrapper">
+                    {cards.length > 0 &&
+                        cards.map((card, index) => (
+                            <Card
+                                {...card}
+                                index={index}
+                                setSelectedCardId={setSelectedCardId}
+                                key={index}
+                            />
+                        ))}
+                </div>
+                <AnimatePresence>
+                    {(selectedCardId || selectedCardId === 0) && (
+                        <div className="learn-more-wrapper">
+                            <LearnMorePopUp
+                                {...cards[selectedCardId]}
+                                selectedCardId={selectedCardId}
+                                setSelectedCardId={(id) =>
+                                    setSelectedCardId(id)
+                                }
+                            />
+                        </div>
+                    )}
+                </AnimatePresence>
+            </AnimateSharedLayout>
         </StyledServices>
     );
 };
@@ -112,6 +148,16 @@ const StyledServices = styled(motion.div)`
         grid-template-columns: repeat(3, 1fr);
         justify-content: space-evenly;
         margin: 0 6rem;
+    }
+
+    .learn-more-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        margin: 5rem;
     }
 
     @media screen and (max-width: 800px) {

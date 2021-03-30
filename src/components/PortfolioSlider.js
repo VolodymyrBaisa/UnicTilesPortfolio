@@ -95,7 +95,6 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
 
     const pagination = () => {
         if (!sliders) return;
-        console.log(totalPages);
         let results = [];
         for (let i = 0; i < totalPages; i++) {
             if (i <= 10) {
@@ -130,16 +129,14 @@ const PortfolioSlider = ({ sliders, totalItemsOnPage }) => {
                 <div className="slider">{slider()}</div>
                 <AnimatePresence>
                     {(selectedSliderId || selectedSliderId === 0) && (
-                        <motion.div>
-                            <motion.div className="slider-popup-wrapper">
-                                <motion.img
-                                    layoutId={selectedSliderId + 1}
-                                    className="img-card-popup"
-                                    src={sliders[selectedSliderId]}
-                                    alt=""
-                                    onClick={() => setSelectedSliderId(null)}
-                                />
-                            </motion.div>
+                        <motion.div className="slider-popup-wrapper">
+                            <motion.img
+                                className="img-card-popup"
+                                src={sliders[selectedSliderId]}
+                                alt=""
+                                onClick={() => setSelectedSliderId(null)}
+                                layoutId={selectedSliderId + 1}
+                            />
                         </motion.div>
                     )}
                 </AnimatePresence>
