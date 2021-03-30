@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import emailjs from "emailjs-com";
 //Styling and Animation
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";

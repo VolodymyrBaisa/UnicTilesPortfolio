@@ -23,63 +23,63 @@ const Contacts = ({ tAddress, tEmail, tPhone1, tPhone2 }) => {
 
     return (
         <StyledContacts elementWidth={elementWidth}>
-            <motion.div
+            <motion.a
                 className="container"
                 variants={contactsAnimation}
                 whileTap="tap"
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
+                href={"http://maps.google.com/?q=" + tAddress}
+                target="_blank"
+                rel="noreferrer"
             >
                 <img src={mapPin} alt="Map pin icon" />
-                <a
-                    href={"http://maps.google.com/?q=" + tAddress}
-                    target="_blank"
-                >
-                    {tAddress}
-                </a>
-            </motion.div>
-            <motion.div
+                <div>{tAddress}</div>
+            </motion.a>
+            <motion.a
                 className="container"
                 variants={contactsAnimation}
                 whileTap="tap"
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
+                href={"mailto:" + tEmail}
             >
                 <img src={email} alt="Email icon" />
-                <a href={"mailto:" + tEmail}>{tEmail}</a>
-            </motion.div>
-            <motion.div
+                <div>{tEmail}</div>
+            </motion.a>
+            <motion.a
                 className="container"
                 variants={contactsAnimation}
                 whileTap="tap"
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
+                href={"tel:" + tPhone1}
             >
                 <img src={phone} alt="Phone icon" />
-                <a href={"tel:" + tPhone1}>{tPhone1}</a>
-            </motion.div>
-            <motion.div
+                <div>{tPhone1}</div>
+            </motion.a>
+            <motion.a
                 className="container"
                 variants={contactsAnimation}
                 whileTap="tap"
                 onMouseOver={(e) => setElementWidth(getElementsWidth(e))}
+                href={"tel:" + tPhone2}
             >
                 <img src={phone} alt="Phone icon" />
-                <a href={"tel:" + tPhone2}>{tPhone2}</a>
-            </motion.div>
+                <div>{tPhone2}</div>
+            </motion.a>
         </StyledContacts>
     );
 };
 
 const StyledContacts = styled(motion.div)`
     display: inline-block;
-
     .container {
         display: flex;
         flex-direction: row;
         align-items: center;
         position: relative;
-        cursor: pointer;
         margin-bottom: 2.5rem;
+        text-decoration: none;
 
-        &:after {
+        &::after {
             transition: all 0.2s ease;
             position: absolute;
             content: "";
@@ -91,7 +91,7 @@ const StyledContacts = styled(motion.div)`
             -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
         }
-        &:hover:after {
+        &:hover::after {
             width: ${(props) => props.elementWidth + "px"};
         }
         img {
@@ -100,12 +100,12 @@ const StyledContacts = styled(motion.div)`
             pointer-events: none;
         }
         /*Phone, Email, Address*/
-        a {
+        div {
             margin: 0 0.5vw;
             color: #525355;
             font-weight: 800;
             font-size: 2.2rem;
-            text-decoration: none;
+            pointer-events: none;
         }
     }
 
