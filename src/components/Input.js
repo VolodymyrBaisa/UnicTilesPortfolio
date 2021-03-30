@@ -3,14 +3,14 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Input = ({ label, icon }) => {
+const Input = ({ name, label, icon, required }) => {
     return (
         <StyledInput>
             <div className="label">
                 {label} <span>*</span>
             </div>
             <div className="input-wrapper">
-                <input type="text" />
+                <input name={name} type="text" required={required} />
                 <img src={icon} alt="" />
             </div>
         </StyledInput>
@@ -41,6 +41,7 @@ const StyledInput = styled(motion.div)`
             width: 100%;
             height: 100%;
             font-size: 1.8rem;
+            cursor: text;
         }
         img {
             width: 2.5rem;

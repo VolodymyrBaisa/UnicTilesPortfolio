@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 //Styling and Animation
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 //Components
-import Button from "../components/Button";
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
+import InputButton from "../components/InputButton";
 //Icons
 import user from "../img/svg/user.svg";
 import email2 from "../img/svg/mail2.svg";
@@ -42,6 +42,37 @@ const ContactForm = () => {
         }
     }, [controls, inView]);
 
+    const [sendSuccessRes, setSendSuccessRes] = useState(0);
+
+    const setSuccessResWithTimeout = (id) => {
+        setSendSuccessRes(id);
+        setTimeout(() => {
+            setSendSuccessRes(0);
+        }, 2000);
+    };
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                "service_ryl2hah",
+                "template_nz8nnfy",
+                e.target,
+                "user_u27B7SQx346GXinwr6AIN"
+            )
+            .then(
+                (result) => {
+                    setSuccessResWithTimeout(1);
+                },
+                (error) => {
+                    setSuccessResWithTimeout(2);
+                    console.log(error.text);
+                }
+            );
+        e.target.reset();
+    };
+
     return (
         <StyledContactForm
             variants={contactFormAnimation}
@@ -49,10 +80,22 @@ const ContactForm = () => {
             animate={controls}
             ref={ref}
         >
-            <Input label={"Full Name"} icon={user} />
-            <Input label={"Email"} icon={email2} />
-            <Textarea label={"Message"} />
-            <Button text={"Submit"} link={"#"} />
+            <form onSubmit={sendEmail}>
+                <Input
+                    name="full_name"
+                    label={"Full Name"}
+                    icon={user}
+                    required={true}
+                />
+                <Input
+                    name="user_email"
+                    label={"Email"}
+                    icon={email2}
+                    required={true}
+                />
+                <Textarea name="message" label={"Message"} required={true} />
+                <InputButton success={sendSuccessRes} />
+            </form>
         </StyledContactForm>
     );
 };

@@ -3,13 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Textarea = ({ label }) => {
+const Textarea = ({ name, label, required }) => {
     return (
         <StyledTextarea>
             <div>
                 {label} <span>*</span>
             </div>
-            <textarea />
+            <textarea name={name} required={required} />
         </StyledTextarea>
     );
 };
