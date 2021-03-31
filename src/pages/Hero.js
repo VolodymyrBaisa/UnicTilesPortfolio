@@ -16,10 +16,10 @@ import homeadvisor from "../img/svg/homeadvisor.svg";
 //Containers
 import mask from "../img/svg/mask-up.svg";
 //Img
-import slider1 from "../img/placeholder/1.jpg";
-import slider2 from "../img/placeholder/2.jpg";
-import slider3 from "../img/placeholder/3.jpg";
-import slider4 from "../img/placeholder/4.jpg";
+import slider1 from "../img/slider/1.jpg";
+import slider2 from "../img/slider/2.jpg";
+import slider3 from "../img/slider/3.jpg";
+import slider4 from "../img/slider/4.jpg";
 
 const sliders = [slider1, slider2, slider3, slider4];
 

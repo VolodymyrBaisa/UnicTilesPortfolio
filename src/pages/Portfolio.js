@@ -10,13 +10,50 @@ import mask from "../img/svg/mask-down.svg";
 //Utils
 import { useMediaQuery } from "../utils/MediaQuery";
 //Img
-import slider1 from "../img/placeholder/1.jpg";
-import slider2 from "../img/placeholder/2.jpg";
-import slider3 from "../img/placeholder/3.jpg";
-import slider4 from "../img/placeholder/4.jpg";
+import slider1 from "../img/slider/1.jpg";
+import slider2 from "../img/slider/2.jpg";
+import slider3 from "../img/slider/3.jpg";
+import slider4 from "../img/slider/4.jpg";
+import slider5 from "../img/slider/5.jpg";
+import slider6 from "../img/slider/6.jpg";
+import slider7 from "../img/slider/7.jpg";
+import slider8 from "../img/slider/8.jpg";
+import slider9 from "../img/slider/9.jpg";
+import slider10 from "../img/slider/10.jpg";
+import slider11 from "../img/slider/11.jpg";
+import slider12 from "../img/slider/12.jpg";
+import slider13 from "../img/slider/13.jpg";
+import slider14 from "../img/slider/14.jpg";
+import slider15 from "../img/slider/15.jpg";
+import slider16 from "../img/slider/16.jpg";
+import slider17 from "../img/slider/17.jpg";
+import slider18 from "../img/slider/18.jpg";
+import slider19 from "../img/slider/19.jpg";
+import slider20 from "../img/slider/20.jpg";
 
 //Slider Data
-const sliders = [slider1, slider2, slider3, slider4, slider1];
+const sliders = [
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider5,
+    slider6,
+    slider7,
+    slider8,
+    slider9,
+    slider10,
+    slider11,
+    slider12,
+    slider13,
+    slider14,
+    slider15,
+    slider16,
+    slider17,
+    slider18,
+    slider19,
+    slider20,
+];
 
 const Portfolio = () => {
     const [itemsOnPage, setItemsOnPage] = useState(10);

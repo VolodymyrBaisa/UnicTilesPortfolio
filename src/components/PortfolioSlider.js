@@ -187,6 +187,7 @@ const StyledPortfolioSlider = styled(motion.div)`
         .img-card {
             object-fit: cover;
             width: 26.5rem;
+            height: 26.5rem;
             border: 5px solid #27272b;
             box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5);
             border-radius: 5px;
@@ -246,7 +247,8 @@ const StyledPortfolioSlider = styled(motion.div)`
 
         .img-card-popup {
             object-fit: cover;
-            width: 80%;
+            object-position: center center;
+            width: 60%;
             height: 82%;
             border: 0.5rem solid #27272b;
             background: #27272b;
