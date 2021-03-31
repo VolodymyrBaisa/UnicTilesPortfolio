@@ -132,6 +132,7 @@ const StyledCard = styled(motion.div)`
             font-weight: normal;
             font-size: 1.8rem;
             line-height: 2.8rem;
+            white-space: pre-line;
         }
         .learn-more-wrapper {
             position: relative;
