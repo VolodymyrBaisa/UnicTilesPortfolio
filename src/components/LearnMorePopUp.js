@@ -65,10 +65,11 @@ const LearMoreStyle = styled(motion.div)`
     margin: auto;
     background-color: #fff;
     border: 0.2rem solid #a6a6a6;
-    overflow-y: hidden;
+    overflow: hidden;
 
     .close-btn {
         position: absolute;
+        top: 0;
         right: 0;
         margin: 0.5rem;
         width: 3rem;
