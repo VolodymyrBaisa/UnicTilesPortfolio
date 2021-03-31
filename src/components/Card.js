@@ -153,7 +153,7 @@ const StyledCard = styled(motion.div)`
                 display: inline-block;
                 font-size: 2rem;
                 font-weight: 600;
-                line-height: 31px;
+                line-height: 3.1rem;
                 letter-spacing: 0.095em;
                 color: #ebb02d;
                 text-transform: uppercase;
@@ -162,7 +162,8 @@ const StyledCard = styled(motion.div)`
             img {
                 display: inline-block;
                 margin-left: 1rem;
-                width: 2rem;
+                transform: translateY(0.3rem);
+                width: 2.1rem;
                 pointer-events: none;
             }
         }
