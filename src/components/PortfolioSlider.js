@@ -268,6 +268,7 @@ const StyledPortfolioSlider = styled(motion.div)`
         .slider {
             .img-card {
                 width: 24rem;
+                height: 24rem;
             }
         }
 
@@ -284,6 +285,7 @@ const StyledPortfolioSlider = styled(motion.div)`
         .slider {
             .img-card {
                 width: 43rem;
+                height: 43rem;
             }
         }
 
