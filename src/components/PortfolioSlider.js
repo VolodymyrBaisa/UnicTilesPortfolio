@@ -285,7 +285,7 @@ const StyledPortfolioSlider = styled(motion.div)`
         .slider {
             .img-card {
                 width: 43rem;
-                height: 43rem;
+                height: 42rem;
             }
         }
 
