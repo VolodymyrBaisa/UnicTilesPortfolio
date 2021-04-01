@@ -13,30 +13,8 @@ import Contacts from "../../components/Contacts";
 //Container
 import contactUsBackground from "../../img/svg/contact-us-background-mob.svg";
 import maskFooter from "../../img/svg/mask_footer.svg";
-//Icons
-import instagram from "../../img/svg/instagram.svg";
-import facebook from "../../img/svg/facebook.svg";
-import homeadvisor from "../../img/svg/homeadvisor.svg";
-
-const menuArray = [
-    { text: "Home", link: "#" },
-    { text: "Tile Services", link: "#" },
-    { text: "Portfolio", link: "#" },
-    { text: "About Us", link: "#" },
-    { text: "Contact", link: "#" },
-];
-
-const socialIcons = [
-    { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
-    {
-        icon: facebook,
-        link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
-    },
-    {
-        icon: homeadvisor,
-        link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
-    },
-];
+//Storage
+import storage from "../../utils/Storage";
 
 const Contact = () => {
     return (
@@ -46,10 +24,10 @@ const Contact = () => {
                 <div className="wrapper">
                     <div className="contact-information">
                         <Contacts
-                            tAddress={"2537 Post Rd Southport, CT 06890"}
-                            tEmail={"info@unictiles.com"}
-                            tPhone1={"(203) 690-0552"}
-                            tPhone2={"(203) 895-8258"}
+                            tAddress={storage.contacts.address}
+                            tEmail={storage.contacts.email}
+                            tPhone1={storage.contacts.phone1}
+                            tPhone2={storage.contacts.phone2}
                         />
                     </div>
                     <div className="map">
@@ -64,14 +42,14 @@ const Contact = () => {
                 </div>
                 {/* Menu */}
                 <div className="social-icons-and-menu-container">
-                    <SocialIcons icons={socialIcons} />
-                    <Menu menuArray={menuArray} />
+                    <SocialIcons icons={storage.socialIcons} />
+                    <Menu menuArray={storage.menuArray} />
                 </div>
                 {/* Contact info */}
                 <div className="bottom-info">
                     <ShortContacts
-                        tPhone={"(203) 690-0552"}
-                        tMail={"info@unictiles.com"}
+                        tPhone={storage.contacts.phone1}
+                        tMail={storage.contacts.email}
                     />
                 </div>
             </div>

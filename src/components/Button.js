@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -32,23 +33,31 @@ const Button = ({ text, fontSize, link }) => {
             whileTap="tap"
             transition="transition"
         >
-            <div>{text}</div>
+            <Link className="link" to={link}>
+                <div>{text}</div>
+            </Link>
         </StyledButton>
     );
 };
 
 const StyledButton = styled(motion.div)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 0.5rem;
-    cursor: pointer;
-    div {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: ${(props) => (props.bFontSize ? props.bFontSize : "1.8rem")};
-        padding: 0.7em 2em;
-        color: #46423d;
+    .link {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+
+        div {
+            text-transform: uppercase;
+            width: 100%;
+            font-weight: 700;
+            font-size: ${(props) =>
+                props.bFontSize ? props.bFontSize : "1.8rem"};
+            padding: 0.7em 2em;
+            color: #46423d;
+            pointer-events: none;
+            text-align: center;
+        }
     }
 `;
 

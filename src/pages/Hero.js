@@ -9,39 +9,10 @@ import Menu from "../components/Menu";
 import Slider from "../components/Slider";
 import SocialIcons from "../components/SocialIcons";
 import GetQuoteBox from "../components/GetQuoteBox";
-//Icons
-import instagram from "../img/svg/instagram.svg";
-import facebook from "../img/svg/facebook.svg";
-import homeadvisor from "../img/svg/homeadvisor.svg";
 //Containers
 import mask from "../img/svg/mask-up.svg";
-//Img
-import slider1 from "../img/slider/1.jpg";
-import slider2 from "../img/slider/2.jpg";
-import slider3 from "../img/slider/3.jpg";
-import slider4 from "../img/slider/4.jpg";
-
-const sliders = [slider1, slider2, slider3, slider4];
-
-const socialIcons = [
-    { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
-    {
-        icon: facebook,
-        link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
-    },
-    {
-        icon: homeadvisor,
-        link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
-    },
-];
-
-const menuArray = [
-    { text: "Home", link: "#" },
-    { text: "Tile Services", link: "#" },
-    { text: "Portfolio", link: "#" },
-    { text: "About Us", link: "#" },
-    { text: "Contact", link: "#" },
-];
+//Storage
+import storage from "../utils/Storage";
 
 const Hero = () => {
     return (
@@ -52,39 +23,30 @@ const Hero = () => {
                 {/* Contact info */}
                 <div className="header-info">
                     <ShortContacts
-                        tPhone={"(203) 690-0552"}
-                        tMail={"info@unictiles.com"}
+                        tPhone={storage.contacts.phone1}
+                        tMail={storage.contacts.email}
                     />
                 </div>
                 {/* Menu */}
                 <div className="menu-container">
-                    <Menu menuArray={menuArray} />
+                    <Menu menuArray={storage.menuArray} />
                 </div>
                 {/* Social Icons */}
                 <div className="social-icons-container">
-                    <SocialIcons icons={socialIcons} />
+                    <SocialIcons icons={storage.socialIcons} />
                 </div>
             </div>
             {/* Page Content */}
             <div className="page-content-container">
                 {/* Slider */}
-                <Slider sliders={sliders} interval={5000} />
+                <Slider sliders={storage.sliders} interval={5000} />
                 {/* Get Quote */}
                 <div className="get-quote">
                     <GetQuoteBox
                         btnText={"Get free quote"}
-                        btnLink={"#"}
-                        qHeder={
-                            "RESIDENTIAL AND COMMERCIAL TILE INSTALLATION CONTRACTOR"
-                        }
-                        qText={`
-                Our top-notch design team and highly skilled
-                flooring tile installation
-
-                professionals create stunning tiling 
-                masterpieces, backsplash ideas,
-
-                and backsplash designs that we promise you will enjoy.`}
+                        btnLink={"/getfreequote"}
+                        qHeder={storage.freeQuote.header}
+                        qText={storage.freeQuote.text}
                     />
                 </div>
             </div>

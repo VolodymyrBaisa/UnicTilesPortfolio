@@ -8,40 +8,10 @@ import ShortContacts from "../../components/ShortContacts";
 import Menu from "../../components/Menu";
 import Slider from "../../components/Slider";
 import SocialIcons from "../../components/SocialIcons";
-import Button from "../../components/Button";
-//Icons
-import instagram from "../../img/svg/instagram.svg";
-import facebook from "../../img/svg/facebook.svg";
-import homeadvisor from "../../img/svg/homeadvisor.svg";
 //Containers
 import mask from "../../img/svg/mask-up.svg";
-//Img
-import slider1 from "../../img/slider/1.jpg";
-import slider2 from "../../img/slider/2.jpg";
-import slider3 from "../../img/slider/3.jpg";
-import slider4 from "../../img/slider/4.jpg";
-
-const sliders = [slider1, slider2, slider3, slider4];
-
-const socialIcons = [
-    { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
-    {
-        icon: facebook,
-        link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
-    },
-    {
-        icon: homeadvisor,
-        link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
-    },
-];
-
-const menuArray = [
-    { text: "Home", link: "#" },
-    { text: "Tile Services", link: "#" },
-    { text: "Portfolio", link: "#" },
-    { text: "About Us", link: "#" },
-    { text: "Contact", link: "#" },
-];
+//Storage
+import storage from "../../utils/Storage";
 
 const Hero = () => {
     return (
@@ -50,8 +20,8 @@ const Hero = () => {
                 {/* Contact info */}
                 <div className="header-info">
                     <ShortContacts
-                        tPhone={"(203) 690-0552"}
-                        tMail={"info@unictiles.com"}
+                        tPhone={storage.contacts.phone1}
+                        tMail={storage.contacts.email}
                     />
                 </div>
                 {/* Logo */}
@@ -60,21 +30,14 @@ const Hero = () => {
                 </div>
                 {/* Menu */}
                 <div className="social-icons-and-menu-container">
-                    <SocialIcons icons={socialIcons} />
-                    <Menu menuArray={menuArray} isHeaderMenu={true} />
+                    <SocialIcons icons={storage.socialIcons} />
+                    <Menu menuArray={storage.menuArray} isHeaderMenu={true} />
                 </div>
             </div>
             {/* Page Content */}
             <div className="page-content-container">
                 {/* Slider */}
-                <Slider sliders={sliders} interval={5000} />
-                <div className="get-free-quote">
-                    <Button
-                        text={"Get free quote"}
-                        fontSize={"2.4rem"}
-                        link={"#"}
-                    />
-                </div>
+                <Slider sliders={storage.sliders} interval={5000} />
             </div>
             <img className="background-mask" src={mask} alt="" />
         </StyledHero>
@@ -116,17 +79,6 @@ const StyledHero = styled(motion.div)`
         position: absolute;
         top: 12.5rem;
         width: 100%;
-        .get-free-quote {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
     }
     .background-mask {
         position: absolute;

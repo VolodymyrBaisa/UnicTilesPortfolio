@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+//Components
+import Button from "./Button";
 //Utils
 import { useMediaQuery } from "../utils/MediaQuery";
 //Styling and Animation
@@ -84,6 +86,7 @@ const Menu = ({ menuArray }) => {
                     {menuArray.length > 0 &&
                         menuArray.map((item, index) => (
                             <motion.li
+                                className="menu-item"
                                 key={index}
                                 variants={menuClickItemAnimation}
                                 whileTap="tap"
@@ -133,6 +136,7 @@ const Menu = ({ menuArray }) => {
                                     {menuArray.length > 0 &&
                                         menuArray.map((item, index) => (
                                             <motion.li
+                                                className="menu-item"
                                                 key={index}
                                                 variants={menuOpenItemAnimation}
                                                 whileTap="tap"
@@ -154,6 +158,22 @@ const Menu = ({ menuArray }) => {
                                                 </Link>
                                             </motion.li>
                                         ))}
+                                    <motion.li
+                                        className="get-free-quote"
+                                        variants={menuOpenItemAnimation}
+                                        initial="close"
+                                        animate="open"
+                                        exit="close"
+                                        onClick={() =>
+                                            setIsMobileMenuShow(false)
+                                        }
+                                    >
+                                        <Button
+                                            text={"Get free quote"}
+                                            fontSize={"2.6rem"}
+                                            link={"/getfreequote"}
+                                        />
+                                    </motion.li>
                                 </motion.ul>
                             </motion.div>
                         )}
@@ -170,7 +190,7 @@ const StyledMenu = styled(motion.div)`
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        li {
+        .menu-item {
             position: relative;
             color: #ffffff;
             font-size: 1.8rem;
@@ -234,17 +254,21 @@ const StyledMenu = styled(motion.div)`
             justify-content: center;
             align-items: center;
             height: 60rem;
-            li {
+            .menu-item {
                 color: #46423d;
                 font-size: 4rem;
                 font-weight: bold;
                 margin-left: 0;
                 margin-bottom: 2rem;
             }
-        }
 
-        li:last-child {
-            margin-bottom: 0;
+            .get-free-quote {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                margin: 1rem;
+            }
         }
     }
 `;

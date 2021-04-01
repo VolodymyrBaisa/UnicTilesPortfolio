@@ -11,6 +11,8 @@ import figureBottomRight from "../img/svg/figure-bottom-right.svg";
 import figureCardTopLeft from "../img/svg/figure-card-top-left.svg";
 import figureTopLeft from "../img/svg/figure-top-left.svg";
 import figureTopRight from "../img/svg/figure-top-right.svg";
+//Storage
+import storage from "../utils/Storage";
 
 const elementsAnimation = {
     hidden: { y: 20, opacity: 0 },
@@ -71,15 +73,7 @@ const About = () => {
                     initial="hidden"
                 >
                     <SectionHeader sText={"Who we are"} sColor={"#46423D"} />
-                    <p className="about-text">
-                        {`Unic Tiles tile installation professionals are ready to serve you. Courtesy may be the first thing most individuals think of when it comes to tile installations, but for us, it is considered the most important tool we carry. We know that your tile’s condition can have a dramatic effect on the overall appearance of your home or office. From the backsplash to the counters, we are here for you, we put off the pressure on your shoulders.
-                        
-                        Unic Tiles team can bring elegance and style to almost any space in your home. Let our experts install the perfect tile for your space and create the look you’ve been dreaming of. We can help bring new life to any space in your home.
-                        
-                        Our team has experience in backsplashes, fireplaces, residential and commercial tile installations, tile repairing, kitchen and bathroom remodeling, commercial kitchen tile, showroom tile installation…
-                    
-                        Our mission is to make your remodeling project a less stressful experience by providing a professional atmosphere tailored to meet your needs, both in design and function.`}
-                    </p>
+                    <p className="about-text">{storage.aboutText}</p>
                 </motion.div>
             </div>
         </StyledAbout>

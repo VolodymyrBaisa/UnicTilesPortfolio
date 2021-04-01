@@ -43,7 +43,7 @@ const StyledGetQuoteBox = styled(motion.div)`
         text-align: center;
         color: #fdf6f9;
         line-height: 1.5em;
-        margin: 2em 0 0 0;
+        margin: 1em 0 1em 0;
         text-transform: uppercase;
     }
 
