@@ -92,7 +92,7 @@ const Menu = ({ menuArray }) => {
                                 whileTap="tap"
                             >
                                 <Link
-                                    to={item.text.toLowerCase()}
+                                    to={item.link.toLowerCase()}
                                     smooth={true}
                                     duration={800}
                                 >
@@ -145,7 +145,7 @@ const Menu = ({ menuArray }) => {
                                                 exit="close"
                                             >
                                                 <Link
-                                                    to={item.text.toLowerCase()}
+                                                    to={item.link.toLowerCase()}
                                                     smooth={true}
                                                     duration={800}
                                                     onClick={() =>

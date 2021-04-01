@@ -70,6 +70,7 @@ const GetQuoteDialog = () => {
                                 whileHover="hover"
                             />
                         </Link>
+                        <div className="content"></div>
                     </motion.div>
                 </StyledGetQuoteDialog>
             )}
@@ -102,6 +103,15 @@ const StyledGetQuoteDialog = styled(motion.div)`
             width: 3rem;
             height: 3rem;
             cursor: pointer;
+        }
+
+        .content {
+            position: absolute;
+            top: 4rem;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: 0 1rem 1rem 1rem;
         }
 
         @media screen and (max-width: 1024px) {

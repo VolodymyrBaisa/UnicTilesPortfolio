@@ -56,11 +56,11 @@ const storage = {
     ],
     //Menu
     menuArray: [
-        { text: "Home", link: "#" },
-        { text: "Tile Services", link: "#" },
-        { text: "Portfolio", link: "#" },
-        { text: "About Us", link: "#" },
-        { text: "Contact", link: "#" },
+        { text: "Home", link: "home" },
+        { text: "Tile Services", link: "tile Services" },
+        { text: "Portfolio", link: "portfolio" },
+        { text: "About Us", link: "about us" },
+        { text: "Contact", link: "contact" },
     ],
     //Sliders for hero/home page
     sliders: [slider1, slider2, slider3, slider4],
