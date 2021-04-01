@@ -11,6 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import menu from "../img/svg/menu.svg";
 import menuClose from "../img/svg/menu-close.svg";
 import logo from "../img/svg/logo2.svg";
+//Storage
+import storage from "../utils/Storage";
 
 const menuClickItemAnimation = {
     tap: { scale: 0.9 },
@@ -171,7 +173,7 @@ const Menu = ({ menuArray }) => {
                                         <Button
                                             text={"Get free quote"}
                                             fontSize={"2.6rem"}
-                                            link={"/getfreequote"}
+                                            link={storage.quoteButton.linkTo}
                                         />
                                     </motion.li>
                                 </motion.ul>

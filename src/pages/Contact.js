@@ -47,7 +47,10 @@ const Contact = () => {
                     <Logo />
                 </div>
                 <div className="mask-wrapper">
-                    <Button text={"Get free quote"} link={"/getfreequote"} />
+                    <Button
+                        text={"Get free quote"}
+                        link={storage.quoteButton.linkTo}
+                    />
                 </div>
                 <div className="contact-info">
                     <ShortContacts

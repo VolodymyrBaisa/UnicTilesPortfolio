@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 //Img
 import closeBtn from "../img/svg/x-circle.svg";
+//Storage
+import storage from "../utils/Storage";
 
 const closeBtnAnimation = {
     initial: { rotateZ: 0 },
@@ -43,10 +45,12 @@ const windowAnimation = {
 
 const GetQuoteDialog = () => {
     const location = useLocation();
-    const path = location.pathname.split("/")[1];
+    const path = location.pathname;
+    const linkTo = storage.quoteButton.linkTo;
+    const linkBack = storage.quoteButton.linkBack;
     return (
         <AnimatePresence>
-            {path && (
+            {path && path.includes(linkTo) && (
                 <StyledGetQuoteDialog
                     variants={backgroundAnimation}
                     initial="initial"
@@ -60,7 +64,7 @@ const GetQuoteDialog = () => {
                         animate="anim"
                         exit="initial"
                     >
-                        <Link to={"/"}>
+                        <Link to={linkBack}>
                             <motion.img
                                 className="close-btn"
                                 src={closeBtn}

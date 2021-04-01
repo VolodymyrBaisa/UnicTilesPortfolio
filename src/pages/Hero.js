@@ -44,7 +44,7 @@ const Hero = () => {
                 <div className="get-quote">
                     <GetQuoteBox
                         btnText={"Get free quote"}
-                        btnLink={"/getfreequote"}
+                        btnLink={storage.quoteButton.linkTo}
                         qHeder={storage.freeQuote.header}
                         qText={storage.freeQuote.text}
                     />
