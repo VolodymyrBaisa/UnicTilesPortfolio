@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 //Components
 import QuoteDialogButtons from "../components/QuoteDialogButtons";
+import Progress from "../components/Progress";
 //Img
 import closeBtn from "../img/svg/x-circle.svg";
 //Storage
@@ -164,11 +165,12 @@ const GetQuoteDialog = () => {
                                 {quest[questIterator].window}
                             </div>
                             <div className="controllers">
-                                <progress
-                                    className="progress-bar"
-                                    value={questIterator}
-                                    max={quest.length - 1}
-                                ></progress>
+                                <div className="progress-bar">
+                                    <Progress
+                                        value={questIterator}
+                                        max={quest.length - 1}
+                                    />
+                                </div>
                                 <QuoteDialogButtons
                                     isBackOn={isBackOn}
                                     isNextOn={isNextOn}
@@ -258,29 +260,11 @@ const StyledGetQuoteDialog = styled(motion.div)`
                 padding: 1rem 8rem;
 
                 .progress-bar {
-                    -webkit-appearance: none;
-                    appearance: none;
                     position: absolute;
                     top: -0.6rem;
                     left: 2rem;
-                    width: 94%;
+                    right: 2rem;
                     height: 0.6rem;
-                    &::-webkit-progress-bar {
-                        background-color: #eee;
-                        border-radius: 2px;
-                    }
-
-                    &::-webkit-progress-value {
-                        background: -webkit-linear-gradient(
-                                top,
-                                rgba(255, 255, 255, 0.25),
-                                rgba(0, 0, 0, 0.25)
-                            ),
-                            #ebb02d;
-
-                        border-radius: 2px;
-                        background-size: 35px 20px, 100% 100%, 100% 100%;
-                    }
                 }
             }
         }
@@ -298,13 +282,6 @@ const StyledGetQuoteDialog = styled(motion.div)`
         @media screen and (max-width: 600px) {
             width: 90vw;
             height: 80vh;
-            .wrapper {
-                .controllers {
-                    .progress-bar {
-                        width: 90%;
-                    }
-                }
-            }
         }
     }
 `;

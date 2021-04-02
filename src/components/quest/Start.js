@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Start = () => {
-    return <div>Start</div>;
+    return <StyledStart>Start</StyledStart>;
 };
+
+const StyledStart = styled(motion.div)``;
+
 export default Start;
