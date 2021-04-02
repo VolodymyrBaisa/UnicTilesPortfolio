@@ -1,5 +1,6 @@
 import React from "react";
 
-export const Start = () => {
-    return <div></div>;
+const Start = () => {
+    return <div>Start</div>;
 };
+export default Start;

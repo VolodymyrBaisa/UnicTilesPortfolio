@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Areas = () => {
-    return <div></div>;
+const Areas = () => {
+    return <div>Areas</div>;
 };
+
+export default Areas;

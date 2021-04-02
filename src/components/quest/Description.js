@@ -1,5 +1,6 @@
 import React from "react";
 
-export const Description = () => {
-    return <div></div>;
+const Description = () => {
+    return <div>Description</div>;
 };
+export default Description;

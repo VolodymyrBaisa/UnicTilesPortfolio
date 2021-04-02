@@ -57,6 +57,8 @@ const StyledInputButton = styled(motion.div)`
         width: 100%;
         text-align: center;
         color: #46423d;
+        border: 0.1rem solid #ebb02d;
+        border-radius: 0.5rem;
     }
 
     .success {

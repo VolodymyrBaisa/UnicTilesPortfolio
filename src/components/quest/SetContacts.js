@@ -1,5 +1,7 @@
 import React from "react";
 
-export const SetContacts = () => {
-    return <div></div>;
+const SetContacts = () => {
+    return <div>SetContacts</div>;
 };
+
+export default SetContacts;

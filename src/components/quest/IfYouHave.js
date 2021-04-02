@@ -1,5 +1,7 @@
 import React from "react";
 
-export const IfYouHave = () => {
-    return <div></div>;
+const IfYouHave = () => {
+    return <div>IfYouHave</div>;
 };
+
+export default IfYouHave;

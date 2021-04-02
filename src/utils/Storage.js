@@ -109,6 +109,8 @@ const storage = {
     quoteButton: {
         linkTo: "/getfreequote",
         linkBack: "/",
+        // linkTo: "/UnicTilesPortfolio/getfreequote",
+        // linkBack: "/UnicTilesPortfolio/",
     },
     //About Us
     aboutText: `Unic Tiles tile installation professionals are ready to serve you. Courtesy may be the first thing most individuals think of when it comes to tile installations, but for us, it is considered the most important tool we carry. We know that your tile’s condition can have a dramatic effect on the overall appearance of your home or office. From the backsplash to the counters, we are here for you, we put off the pressure on your shoulders.

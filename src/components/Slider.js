@@ -48,7 +48,7 @@ const Slider = ({ sliders, interval }) => {
 
     return (
         <StyledSlider>
-            <img className="slider-item" src={slider} alt="" />
+            <motion.img className="slider-item" src={slider} alt="" />
             <div className="slider-switcher">{dots()}</div>
         </StyledSlider>
     );

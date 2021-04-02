@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Material = () => {
-    return <div></div>;
+const Material = () => {
+    return <div>Material</div>;
 };
+
+export default Material;

@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 //Styling and Animation
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+//Components
+import QuoteDialogButtons from "../components/QuoteDialogButtons";
 //Img
 import closeBtn from "../img/svg/x-circle.svg";
 //Storage
 import storage from "../utils/Storage";
+//Quest
+import Start from "../components/quest/Start";
+import PlaceSelector from "../components/quest/PlaceSelector";
+import Areas from "../components/quest/Areas";
+import Squares from "../components/quest/Squares";
+import Material from "../components/quest/Material";
+import TypeOfTile from "../components/quest/TypeOfTile";
+import IfYouHave from "../components/quest/IfYouHave";
+import Description from "../components/quest/Description";
+import SetContacts from "../components/quest/SetContacts";
+import Finish from "../components/quest/Finish";
 
 const closeBtnAnimation = {
     initial: { rotateZ: 0 },
@@ -43,11 +56,82 @@ const windowAnimation = {
     },
 };
 
+const quest = [
+    { window: <Start />, id: "start" },
+    { window: <PlaceSelector />, id: "placeselector" },
+    { window: <Areas />, id: "areas" },
+    { window: <Squares />, id: "squares" },
+    { window: <Material />, id: "material" },
+    { window: <TypeOfTile />, id: "typeoftile" },
+    { window: <IfYouHave />, id: "ifyouHave" },
+    { window: <Description />, id: "description" },
+    { window: <SetContacts />, id: "setcontacts" },
+    { window: <Finish />, id: "finish" },
+];
+
 const GetQuoteDialog = () => {
     const location = useLocation();
     const path = location.pathname;
     const linkTo = storage.quoteButton.linkTo;
     const linkBack = storage.quoteButton.linkBack;
+
+    const [isBackOn, setIsBackOn] = useState(false);
+    const [isNextOn, setIsNextOn] = useState(false);
+    const [isSkipOn, setIsSkipOn] = useState(false);
+    const [isFinishOn, setIsFinishOn] = useState(false);
+    const [questIterator, setQuestIterator] = useState(0);
+
+    useEffect(() => {
+        setIsBackOn(false);
+        setIsNextOn(false);
+        setIsSkipOn(false);
+        setIsFinishOn(false);
+
+        if (["start"].indexOf(quest[questIterator].id) > -1) {
+            setIsNextOn(true);
+        }
+        if (
+            [
+                "placeselector",
+                "areas",
+                "squares",
+                "material",
+                "typeoftile",
+                "ifyouHave",
+            ].indexOf(quest[questIterator].id) > -1
+        ) {
+            setIsBackOn(true);
+            setIsNextOn(true);
+        }
+        if (
+            ["description", "setcontacts"].indexOf(quest[questIterator].id) > -1
+        ) {
+            setIsBackOn(true);
+            setIsSkipOn(true);
+        }
+        if (["finish"].indexOf(quest[questIterator].id) > -1) {
+            setIsBackOn(true);
+            setIsFinishOn(true);
+        }
+    }, [questIterator]);
+
+    const onClickQuestButton = (selectedBtn) => {
+        switch (selectedBtn) {
+            case "next":
+            case "skip":
+                if (questIterator < quest.length)
+                    setQuestIterator(questIterator + 1);
+                break;
+            case "back":
+                if (questIterator > 0) setQuestIterator(questIterator - 1);
+                break;
+            case "finish":
+                break;
+            default:
+                setQuestIterator(0);
+        }
+    };
+
     return (
         <AnimatePresence>
             {path && path.includes(linkTo) && (
@@ -72,9 +156,25 @@ const GetQuoteDialog = () => {
                                 variants={closeBtnAnimation}
                                 initial="initial"
                                 whileHover="hover"
+                                onClick={() => setQuestIterator(0)}
                             />
                         </Link>
-                        <div className="content"></div>
+                        <div className="wrapper">
+                            <div className="content">
+                                {quest[questIterator].window}
+                            </div>
+                            <div className="controllers">
+                                <QuoteDialogButtons
+                                    isBackOn={isBackOn}
+                                    isNextOn={isNextOn}
+                                    isSkipOn={isSkipOn}
+                                    isFinishOn={isFinishOn}
+                                    callback={(btn) => {
+                                        onClickQuestButton(btn);
+                                    }}
+                                />
+                            </div>
+                        </div>
                     </motion.div>
                 </StyledGetQuoteDialog>
             )}
@@ -108,14 +208,50 @@ const StyledGetQuoteDialog = styled(motion.div)`
             height: 3rem;
             cursor: pointer;
         }
-
-        .content {
+        .wrapper {
             position: absolute;
             top: 4rem;
             right: 0;
             left: 0;
             bottom: 0;
-            margin: 0 1rem 1rem 1rem;
+            margin: 0 1rem 0 1rem;
+            display: flex;
+            flex-direction: column;
+            .content {
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+                padding: 1rem;
+                border-bottom: 0.1rem solid #46423d;
+
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 0.3rem;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 5px rgb(154, 144, 132, 0.5);
+                    border-radius: 10px;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    background: #ebb02d;
+                    border-radius: 10px;
+                }
+
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #b30000;
+                }
+            }
+
+            .controllers {
+                width: 100%;
+                height: 7rem;
+                padding: 1rem 8rem;
+            }
         }
 
         @media screen and (max-width: 1024px) {

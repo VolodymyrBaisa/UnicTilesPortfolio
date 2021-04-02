@@ -39,7 +39,7 @@ const Hero = () => {
             {/* Page Content */}
             <div className="page-content-container">
                 {/* Slider */}
-                <Slider sliders={storage.sliders} interval={5000} />
+                <Slider sliders={storage.sliders} interval={7000} />
                 {/* Get Quote */}
                 <div className="get-quote">
                     <GetQuoteBox

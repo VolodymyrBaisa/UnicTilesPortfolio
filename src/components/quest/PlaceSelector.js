@@ -1,5 +1,7 @@
 import React from "react";
 
-export const PlaceSelector = () => {
-    return <div></div>;
+const PlaceSelector = () => {
+    return <div>PlaceSelector</div>;
 };
+
+export default PlaceSelector;
