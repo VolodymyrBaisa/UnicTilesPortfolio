@@ -164,6 +164,11 @@ const GetQuoteDialog = () => {
                                 {quest[questIterator].window}
                             </div>
                             <div className="controllers">
+                                <progress
+                                    className="progress-bar"
+                                    value={questIterator}
+                                    max={quest.length - 1}
+                                ></progress>
                                 <QuoteDialogButtons
                                     isBackOn={isBackOn}
                                     isNextOn={isNextOn}
@@ -199,6 +204,7 @@ const StyledGetQuoteDialog = styled(motion.div)`
         background: #fff;
         border: 0.2rem solid #a6a6a6;
         border-radius: 0.5rem;
+
         .close-btn {
             position: absolute;
             top: 0;
@@ -222,7 +228,6 @@ const StyledGetQuoteDialog = styled(motion.div)`
                 height: 100%;
                 overflow-y: scroll;
                 padding: 1rem;
-                border-bottom: 0.1rem solid #46423d;
 
                 /* width */
                 &::-webkit-scrollbar {
@@ -246,11 +251,37 @@ const StyledGetQuoteDialog = styled(motion.div)`
                     background: #b30000;
                 }
             }
-
             .controllers {
+                position: relative;
                 width: 100%;
                 height: 7rem;
                 padding: 1rem 8rem;
+
+                .progress-bar {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    position: absolute;
+                    top: -0.6rem;
+                    left: 2rem;
+                    width: 94%;
+                    height: 0.6rem;
+                    &::-webkit-progress-bar {
+                        background-color: #eee;
+                        border-radius: 2px;
+                    }
+
+                    &::-webkit-progress-value {
+                        background: -webkit-linear-gradient(
+                                top,
+                                rgba(255, 255, 255, 0.25),
+                                rgba(0, 0, 0, 0.25)
+                            ),
+                            #ebb02d;
+
+                        border-radius: 2px;
+                        background-size: 35px 20px, 100% 100%, 100% 100%;
+                    }
+                }
             }
         }
 
@@ -267,6 +298,13 @@ const StyledGetQuoteDialog = styled(motion.div)`
         @media screen and (max-width: 600px) {
             width: 90vw;
             height: 80vh;
+            .wrapper {
+                .controllers {
+                    .progress-bar {
+                        width: 90%;
+                    }
+                }
+            }
         }
     }
 `;
