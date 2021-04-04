@@ -57,18 +57,44 @@ const windowAnimation = {
     },
 };
 
-const quest = [
-    { window: <Start />, id: "start" },
-    { window: <PlaceSelector />, id: "placeselector" },
-    { window: <Areas />, id: "areas" },
-    { window: <Squares />, id: "squares" },
-    { window: <Material />, id: "material" },
-    { window: <TypeOfTile />, id: "typeoftile" },
-    { window: <IfYouHave />, id: "ifyouHave" },
-    { window: <Description />, id: "description" },
-    { window: <SetContacts />, id: "setcontacts" },
-    { window: <Finish />, id: "finish" },
-];
+const quest = (memory, setMemory) => {
+    return [
+        { window: <Start />, id: "start" },
+        {
+            window: <PlaceSelector memory={memory} setMemory={setMemory} />,
+            id: "placeselector",
+        },
+        {
+            window: <Areas memory={memory} setMemory={setMemory} />,
+            id: "areas",
+        },
+        {
+            window: <Squares memory={memory} setMemory={setMemory} />,
+            id: "squares",
+        },
+        {
+            window: <Material memory={memory} setMemory={setMemory} />,
+            id: "material",
+        },
+        {
+            window: <TypeOfTile memory={memory} setMemory={setMemory} />,
+            id: "typeoftile",
+        },
+        {
+            window: <IfYouHave memory={memory} setMemory={setMemory} />,
+            id: "ifyouHave",
+        },
+        {
+            window: <Description memory={memory} setMemory={setMemory} />,
+            id: "description",
+        },
+        {
+            window: <SetContacts memory={memory} setMemory={setMemory} />,
+            id: "setcontacts",
+        },
+        { window: <Finish memory={memory} />, id: "finish" },
+    ];
+};
 
 const GetQuoteDialog = () => {
     const location = useLocation();
@@ -81,6 +107,12 @@ const GetQuoteDialog = () => {
     const [isSkipOn, setIsSkipOn] = useState(false);
     const [isFinishOn, setIsFinishOn] = useState(false);
     const [questIterator, setQuestIterator] = useState(0);
+    //Save selected or set information from quest
+    const [memory, setMemory] = useState({});
+
+    useEffect(() => {
+        console.log(memory);
+    }, [memory]);
 
     useEffect(() => {
         setIsBackOn(false);
@@ -88,7 +120,7 @@ const GetQuoteDialog = () => {
         setIsSkipOn(false);
         setIsFinishOn(false);
 
-        if (["start"].indexOf(quest[questIterator].id) > -1) {
+        if (["start"].indexOf(quest()[questIterator].id) > -1) {
             setIsNextOn(true);
         }
         if (
@@ -99,18 +131,19 @@ const GetQuoteDialog = () => {
                 "material",
                 "typeoftile",
                 "ifyouHave",
-            ].indexOf(quest[questIterator].id) > -1
+            ].indexOf(quest()[questIterator].id) > -1
         ) {
             setIsBackOn(true);
             setIsNextOn(true);
         }
         if (
-            ["description", "setcontacts"].indexOf(quest[questIterator].id) > -1
+            ["description", "setcontacts"].indexOf(quest()[questIterator].id) >
+            -1
         ) {
             setIsBackOn(true);
             setIsSkipOn(true);
         }
-        if (["finish"].indexOf(quest[questIterator].id) > -1) {
+        if (["finish"].indexOf(quest()[questIterator].id) > -1) {
             setIsBackOn(true);
             setIsFinishOn(true);
         }
@@ -162,13 +195,13 @@ const GetQuoteDialog = () => {
                         </Link>
                         <div className="wrapper">
                             <div className="content">
-                                {quest[questIterator].window}
+                                {quest(memory, setMemory)[questIterator].window}
                             </div>
                             <div className="controllers">
                                 <div className="progress-bar">
                                     <Progress
                                         value={questIterator}
-                                        max={quest.length - 1}
+                                        max={quest().length - 1}
                                     />
                                 </div>
                                 <QuoteDialogButtons
@@ -261,7 +294,7 @@ const StyledGetQuoteDialog = styled(motion.div)`
 
                 .progress-bar {
                     position: absolute;
-                    top: -0.6rem;
+                    top: -0.4rem;
                     left: 2rem;
                     right: 2rem;
                     height: 0.6rem;
