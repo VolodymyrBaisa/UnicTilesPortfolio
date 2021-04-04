@@ -3,21 +3,26 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
+const RadioButtonSelector = ({
+    values,
+    section,
+    questState,
+    setQuestState,
+}) => {
     const [arrValues, setArrValues] = useState([]);
     useEffect(() => setArrValues(values), [values]);
 
-    const cOtherBoxRef = useRef(null);
-    const iOtherBoxRef = useRef(null);
+    const cOtherRadioRef = useRef(null);
+    const iOtherRadioRef = useRef(null);
 
     const [isOtherChecked, setIsOtherChecked] = useState(false);
 
     //Fix check/uncheck color for other input
     useEffect(() => {
-        if (iOtherBoxRef.current && !isOtherChecked)
-            iOtherBoxRef.current.style.color = "#6e6e6e";
-        else if (iOtherBoxRef.current)
-            iOtherBoxRef.current.style.color = "#000";
+        if (iOtherRadioRef.current && !isOtherChecked)
+            iOtherRadioRef.current.style.color = "#6e6e6e";
+        else if (iOtherRadioRef.current)
+            iOtherRadioRef.current.style.color = "#000";
     }, [isOtherChecked]);
 
     const saveValues = (name, isChecked = false) => {
@@ -25,7 +30,6 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
             setQuestState({
                 ...questState,
                 [section]: {
-                    ...questState[section],
                     ...Object.assign(
                         {},
                         {
@@ -37,12 +41,11 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
         }
     };
 
-    const saveOtherCheckBoxValue = (name, isChecked = false, comment = "") => {
+    const saveOtherRadioValue = (name, isChecked = false, comment = "") => {
         if (name) {
             setQuestState({
                 ...questState,
                 [section]: {
-                    ...questState[section],
                     ...Object.assign(
                         {},
                         {
@@ -56,36 +59,39 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
     };
 
     return (
-        <StyledCheckBoxSelector>
+        <StyledRadioButtonSelector>
             <ul>
                 {arrValues &&
                     arrValues.map((value, index) => {
                         return value.id !== "other" ? (
                             <li key={index}>
                                 <input
-                                    type="checkbox"
-                                    name={value.name}
+                                    type="radio"
+                                    name="radio"
                                     value={value.name}
                                     checked={
                                         (questState[section] &&
                                             questState[section][value.name]) ||
                                         false
                                     }
-                                    onChange={(e) =>
+                                    onClick={(e) => {
+                                        setIsOtherChecked(false);
+                                    }}
+                                    onChange={(e) => {
                                         saveValues(
                                             e.target?.value,
                                             e.target?.checked
-                                        )
-                                    }
+                                        );
+                                    }}
                                 />
                                 <label htmlFor={index}>{value.name}</label>
                             </li>
                         ) : (
                             <li key={index}>
                                 <input
-                                    ref={cOtherBoxRef}
-                                    type="checkbox"
-                                    name="other"
+                                    ref={cOtherRadioRef}
+                                    type="radio"
+                                    name="radio"
                                     value="other"
                                     checked={
                                         questState[section] &&
@@ -95,16 +101,16 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
                                     }
                                     onChange={(e) => {
                                         setIsOtherChecked(e.target?.checked);
-                                        saveOtherCheckBoxValue(
+                                        saveOtherRadioValue(
                                             "Other",
-                                            cOtherBoxRef.current?.checked,
-                                            iOtherBoxRef.current?.value || ""
+                                            cOtherRadioRef.current?.checked,
+                                            iOtherRadioRef.current?.value || ""
                                         );
                                     }}
                                 />
                                 <label htmlFor="other">&nbsp;</label>
                                 <input
-                                    ref={iOtherBoxRef}
+                                    ref={iOtherRadioRef}
                                     className="other-option"
                                     type="text"
                                     placeholder={value.name}
@@ -117,10 +123,10 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
                                         setIsOtherChecked(true);
                                     }}
                                     onChange={() => {
-                                        saveOtherCheckBoxValue(
+                                        saveOtherRadioValue(
                                             "Other",
-                                            cOtherBoxRef.current?.checked,
-                                            iOtherBoxRef.current?.value
+                                            cOtherRadioRef.current?.checked,
+                                            iOtherRadioRef.current?.value
                                         );
                                     }}
                                 />
@@ -128,11 +134,11 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
                         );
                     })}
             </ul>
-        </StyledCheckBoxSelector>
+        </StyledRadioButtonSelector>
     );
 };
 
-const StyledCheckBoxSelector = styled(motion.div)`
+const StyledRadioButtonSelector = styled(motion.div)`
     width: 100%;
     height: 100%;
     ul {
@@ -149,22 +155,22 @@ const StyledCheckBoxSelector = styled(motion.div)`
                 margin-left: 1rem;
             }
 
-            input[type="checkbox"] + label {
+            input[type="radio"] + label {
                 color: #6e6e6e;
             }
-            input[type="checkbox"]:checked + label {
+            input[type="radio"]:checked + label {
                 color: #000;
             }
 
-            [type="checkbox"]:not(checked),
-            [type="checkbox"]:checked {
+            [type="radio"]:not(checked),
+            [type="radio"]:checked {
                 opacity: 0;
                 cursor: pointer;
                 transform: translateX(0.3rem);
             }
 
-            [type="checkbox"]:not(checked) + label::before,
-            [type="checkbox"]:checked + label::before {
+            [type="radio"]:not(checked) + label::before,
+            [type="radio"]:checked + label::before {
                 position: absolute;
                 top: 0.6rem;
                 left: -2.3rem;
@@ -180,11 +186,11 @@ const StyledCheckBoxSelector = styled(motion.div)`
                 line-height: 1;
             }
 
-            [type="checkbox"]:checked + label::before {
+            [type="radio"]:checked + label::before {
                 content: "✕";
             }
 
-            [type="checkbox"]:not(checked) + label::before {
+            [type="radio"]:not(checked) + label::before {
                 content: "";
             }
 
@@ -211,4 +217,4 @@ const StyledCheckBoxSelector = styled(motion.div)`
     }
 `;
 
-export default CheckBoxSelector;
+export default RadioButtonSelector;

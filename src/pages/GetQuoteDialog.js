@@ -157,7 +157,7 @@ const GetQuoteDialog = () => {
         setIsSkipOn(false);
         setIsFinishOn(false);
 
-        if (["start"].indexOf(quest()[questIterator].id) > -1) {
+        if (["start"].indexOf(quest()[questIterator]?.id) > -1) {
             setIsNextOn(true);
         }
         if (
@@ -168,19 +168,19 @@ const GetQuoteDialog = () => {
                 "material",
                 "typeoftile",
                 "ifyouHave",
-            ].indexOf(quest()[questIterator].id) > -1
+            ].indexOf(quest()[questIterator]?.id) > -1
         ) {
             setIsBackOn(true);
             setIsNextOn(true);
         }
         if (
-            ["description", "setcontacts"].indexOf(quest()[questIterator].id) >
+            ["description", "setcontacts"].indexOf(quest()[questIterator]?.id) >
             -1
         ) {
             setIsBackOn(true);
             setIsSkipOn(true);
         }
-        if (["finish"].indexOf(quest()[questIterator].id) > -1) {
+        if (["finish"].indexOf(quest()[questIterator]?.id) > -1) {
             setIsBackOn(true);
             setIsFinishOn(true);
         }
@@ -190,7 +190,7 @@ const GetQuoteDialog = () => {
         switch (selectedBtn) {
             case "next":
             case "skip":
-                if (questIterator < quest.length)
+                if (questIterator < quest().length)
                     setQuestIterator(questIterator + 1);
                 break;
             case "back":
@@ -232,11 +232,11 @@ const GetQuoteDialog = () => {
                         </Link>
                         <div className="wrapper">
                             <div className="content">
-                                {
+                                {quest &&
+                                    quest().length > 0 &&
                                     quest(questState, setQuestState)[
                                         questIterator
-                                    ].window
-                                }
+                                    ]?.window}
                             </div>
                             <div className="controllers">
                                 <div className="progress-bar">

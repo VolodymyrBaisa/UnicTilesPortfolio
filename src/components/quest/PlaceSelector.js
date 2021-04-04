@@ -8,14 +8,14 @@ import CheckBoxSelector from "../CheckBoxSelector";
 const section = "places";
 
 const places = [
-    { placeName: "Kitchen", id: "" },
-    { placeName: "Bathroom", id: "" },
-    { placeName: "Hallway", id: "" },
-    { placeName: "Outside patio", id: "" },
-    { placeName: "Entranceway", id: "" },
-    { placeName: "Living room", id: "" },
-    { placeName: "Pool", id: "" },
-    { placeName: "Other place", id: "other" },
+    { name: "Kitchen", id: "" },
+    { name: "Bathroom", id: "" },
+    { name: "Hallway", id: "" },
+    { name: "Outside patio", id: "" },
+    { name: "Entranceway", id: "" },
+    { name: "Living room", id: "" },
+    { name: "Pool", id: "" },
+    { name: "Other place", id: "other" },
 ];
 
 const PlaceSelector = ({ questState, setQuestState }) => {
