@@ -18,15 +18,15 @@ const places = [
     { placeName: "Other place", id: "other" },
 ];
 
-const PlaceSelector = ({ memory, setMemory }) => {
+const PlaceSelector = ({ questState, setQuestState }) => {
     return (
         <StyledPlaceSelector>
             <div className="header">Where is the tile work being done?</div>
             <CheckBoxSelector
                 values={places}
                 section={section}
-                memory={memory}
-                setMemory={setMemory}
+                questState={questState}
+                setQuestState={setQuestState}
             />
         </StyledPlaceSelector>
     );

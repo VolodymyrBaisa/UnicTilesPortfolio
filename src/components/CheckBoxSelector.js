@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
+const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
     const [arrValues, setArrValues] = useState([]);
     useEffect(() => setArrValues(values), [values]);
 
@@ -14,10 +14,10 @@ const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
 
     const saveValues = (name, isChecked = false) => {
         if (name) {
-            setMemory({
-                ...memory,
+            setQuestState({
+                ...questState,
                 [section]: {
-                    ...memory[section],
+                    ...questState[section],
                     ...Object.assign(
                         {},
                         {
@@ -31,10 +31,10 @@ const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
 
     const saveOtherCheckBoxValue = (name, isChecked = false, comment = "") => {
         if (name) {
-            setMemory({
-                ...memory,
+            setQuestState({
+                ...questState,
                 [section]: {
-                    ...memory[section],
+                    ...questState[section],
                     ...Object.assign(
                         {},
                         {
@@ -59,8 +59,10 @@ const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
                                     name={value.placeName}
                                     value={value.placeName}
                                     checked={
-                                        (memory[section] &&
-                                            memory[section][value.placeName]) ||
+                                        (questState[section] &&
+                                            questState[section][
+                                                value.placeName
+                                            ]) ||
                                         false
                                     }
                                     onChange={(e) =>
@@ -80,7 +82,8 @@ const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
                                     name="additional"
                                     value="additional"
                                     checked={
-                                        memory[section]["Other"]
+                                        questState[section] &&
+                                        questState[section]["Other"]
                                             ? true
                                             : isOtherChecked
                                     }
@@ -99,7 +102,11 @@ const CheckBoxSelector = ({ values, section, memory, setMemory }) => {
                                     className="additional-option"
                                     type="text"
                                     placeholder={value.placeName}
-                                    value={memory[section]["comment"] || ""}
+                                    value={
+                                        (questState[section] &&
+                                            questState[section]["comment"]) ||
+                                        ""
+                                    }
                                     onClick={() => {
                                         setIsOtherChecked(true);
                                     }}

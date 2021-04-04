@@ -57,42 +57,79 @@ const windowAnimation = {
     },
 };
 
-const quest = (memory, setMemory) => {
+const quest = (questState, setQuestState) => {
     return [
         { window: <Start />, id: "start" },
         {
-            window: <PlaceSelector memory={memory} setMemory={setMemory} />,
+            window: (
+                <PlaceSelector
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "placeselector",
         },
         {
-            window: <Areas memory={memory} setMemory={setMemory} />,
+            window: (
+                <Areas questState={questState} setQuestState={setQuestState} />
+            ),
             id: "areas",
         },
         {
-            window: <Squares memory={memory} setMemory={setMemory} />,
+            window: (
+                <Squares
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "squares",
         },
         {
-            window: <Material memory={memory} setMemory={setMemory} />,
+            window: (
+                <Material
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "material",
         },
         {
-            window: <TypeOfTile memory={memory} setMemory={setMemory} />,
+            window: (
+                <TypeOfTile
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "typeoftile",
         },
         {
-            window: <IfYouHave memory={memory} setMemory={setMemory} />,
+            window: (
+                <IfYouHave
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "ifyouHave",
         },
         {
-            window: <Description memory={memory} setMemory={setMemory} />,
+            window: (
+                <Description
+                    memory={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "description",
         },
         {
-            window: <SetContacts memory={memory} setMemory={setMemory} />,
+            window: (
+                <SetContacts
+                    questState={questState}
+                    setQuestState={setQuestState}
+                />
+            ),
             id: "setcontacts",
         },
-        { window: <Finish memory={memory} />, id: "finish" },
+        { window: <Finish questState={questState} />, id: "finish" },
     ];
 };
 
@@ -108,11 +145,11 @@ const GetQuoteDialog = () => {
     const [isFinishOn, setIsFinishOn] = useState(false);
     const [questIterator, setQuestIterator] = useState(0);
     //Save selected or set information from quest
-    const [memory, setMemory] = useState({});
+    const [questState, setQuestState] = useState({});
 
     useEffect(() => {
-        console.log(memory);
-    }, [memory]);
+        console.log(questState);
+    }, [questState]);
 
     useEffect(() => {
         setIsBackOn(false);
@@ -195,7 +232,11 @@ const GetQuoteDialog = () => {
                         </Link>
                         <div className="wrapper">
                             <div className="content">
-                                {quest(memory, setMemory)[questIterator].window}
+                                {
+                                    quest(questState, setQuestState)[
+                                        questIterator
+                                    ].window
+                                }
                             </div>
                             <div className="controllers">
                                 <div className="progress-bar">
