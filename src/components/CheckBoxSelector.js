@@ -12,6 +12,14 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
 
     const [isOtherChecked, setIsOtherChecked] = useState(false);
 
+    //Fix check/uncheck color for other input
+    useEffect(() => {
+        if (iOtherBoxRef.current && !isOtherChecked)
+            iOtherBoxRef.current.style.color = "#6e6e6e";
+        else if (iOtherBoxRef.current)
+            iOtherBoxRef.current.style.color = "#000";
+    }, [isOtherChecked]);
+
     const saveValues = (name, isChecked = false) => {
         if (name) {
             setQuestState({
@@ -79,8 +87,8 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
                                 <input
                                     ref={cOtherBoxRef}
                                     type="checkbox"
-                                    name="additional"
-                                    value="additional"
+                                    name="other"
+                                    value="other"
                                     checked={
                                         questState[section] &&
                                         questState[section]["Other"]
@@ -96,10 +104,10 @@ const CheckBoxSelector = ({ values, section, questState, setQuestState }) => {
                                         );
                                     }}
                                 />
-                                <label htmlFor="additional">&nbsp;</label>
+                                <label htmlFor="other">&nbsp;</label>
                                 <input
                                     ref={iOtherBoxRef}
-                                    className="additional-option"
+                                    className="other-option"
                                     type="text"
                                     placeholder={value.placeName}
                                     value={
@@ -182,7 +190,7 @@ const StyledCheckBoxSelector = styled(motion.div)`
                 content: "";
             }
 
-            .additional-option {
+            .other-option {
                 all: unset;
                 padding: 0.2rem 0.5rem;
                 width: 60%;
