@@ -18,7 +18,7 @@ const areas = [
 
 const AreasSelector = ({ questState, setQuestState }) => {
     return (
-        <StyledAreasSelector>
+        <StyledSelector>
             <div className="header">What areas need tiling work?</div>
             <CheckBoxSelector
                 values={areas}
@@ -26,10 +26,10 @@ const AreasSelector = ({ questState, setQuestState }) => {
                 questState={questState}
                 setQuestState={setQuestState}
             />
-        </StyledAreasSelector>
+        </StyledSelector>
     );
 };
-const StyledAreasSelector = styled(motion.div)`
+const StyledSelector = styled(motion.div)`
     height: 100%;
     width: 100%;
     display: flex;

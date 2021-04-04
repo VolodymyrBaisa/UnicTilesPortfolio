@@ -20,7 +20,7 @@ const places = [
 
 const PlaceSelector = ({ questState, setQuestState }) => {
     return (
-        <StyledPlaceSelector>
+        <StyledSelector>
             <div className="header">Where is the tile work being done?</div>
             <CheckBoxSelector
                 values={places}
@@ -28,10 +28,10 @@ const PlaceSelector = ({ questState, setQuestState }) => {
                 questState={questState}
                 setQuestState={setQuestState}
             />
-        </StyledPlaceSelector>
+        </StyledSelector>
     );
 };
-const StyledPlaceSelector = styled(motion.div)`
+const StyledSelector = styled(motion.div)`
     height: 100%;
     width: 100%;
     display: flex;

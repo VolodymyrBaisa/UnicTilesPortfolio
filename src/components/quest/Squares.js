@@ -11,14 +11,14 @@ const squares = [
     { name: "Less than 25 sq ft", id: "" },
     { name: "25 - 50 sq ft", id: "" },
     { name: "51 - 100 sq ft", id: "" },
-    { name: "101 - 200 ", id: "" },
+    { name: "101 - 200 sq ft", id: "" },
     { name: "201 - 300 sq ft", id: "" },
     { name: "Other squares size", id: "other" },
 ];
 
 const PlaceSelector = ({ questState, setQuestState }) => {
     return (
-        <StyledPlaceSelector>
+        <StyledSelector>
             <div className="header">
                 Approximately how many square feet is the area that needs
                 tiling?
@@ -29,10 +29,10 @@ const PlaceSelector = ({ questState, setQuestState }) => {
                 questState={questState}
                 setQuestState={setQuestState}
             />
-        </StyledPlaceSelector>
+        </StyledSelector>
     );
 };
-const StyledPlaceSelector = styled(motion.div)`
+const StyledSelector = styled(motion.div)`
     height: 100%;
     width: 100%;
     display: flex;
