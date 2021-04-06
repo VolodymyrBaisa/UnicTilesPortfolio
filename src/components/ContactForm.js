@@ -93,7 +93,13 @@ const ContactForm = () => {
                     icon={email2}
                     required={true}
                 />
-                <Textarea name="message" label={"Message"} required={true} />
+                <div className="textarea-wrapper">
+                    <Textarea
+                        name="message"
+                        label={"Message"}
+                        required={true}
+                    />
+                </div>
                 <InputButton success={sendSuccessRes} />
             </form>
         </StyledContactForm>
@@ -103,6 +109,10 @@ const StyledContactForm = styled(motion.div)`
     background: #fff;
     box-shadow: 0 0 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
     padding: 2rem 1rem;
+    .textarea-wrapper {
+        height: 25rem;
+        margin-bottom: 5rem;
+    }
 `;
 
 export default ContactForm;

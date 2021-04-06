@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import emailjs from "emailjs-com";
+import { useLocation, Link, useHistory } from "react-router-dom";
 //Styling and Animation
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,8 +20,7 @@ import Material from "../components/quest/Material";
 import TypeOfTile from "../components/quest/TypeOfTile";
 import IfYouHave from "../components/quest/IfYouHave";
 import Description from "../components/quest/Description";
-import SetContacts from "../components/quest/SetContacts";
-import Finish from "../components/quest/Finish";
+import Contacts from "../components/quest/Contacts";
 
 const closeBtnAnimation = {
     initial: { rotateZ: 0 },
@@ -59,7 +59,10 @@ const windowAnimation = {
 
 const quest = (questState, setQuestState) => {
     return [
-        { window: <Start />, id: "start" },
+        {
+            window: <Start />,
+            id: "start",
+        },
         {
             window: (
                 <PlaceSelector
@@ -67,7 +70,7 @@ const quest = (questState, setQuestState) => {
                     setQuestState={setQuestState}
                 />
             ),
-            id: "placeselector",
+            id: "places",
         },
         {
             window: (
@@ -109,12 +112,12 @@ const quest = (questState, setQuestState) => {
                     setQuestState={setQuestState}
                 />
             ),
-            id: "ifyouHave",
+            id: "ifyouhave",
         },
         {
             window: (
                 <Description
-                    memory={questState}
+                    questState={questState}
                     setQuestState={setQuestState}
                 />
             ),
@@ -122,14 +125,13 @@ const quest = (questState, setQuestState) => {
         },
         {
             window: (
-                <SetContacts
+                <Contacts
                     questState={questState}
                     setQuestState={setQuestState}
                 />
             ),
-            id: "setcontacts",
+            id: "contacts",
         },
-        { window: <Finish questState={questState} />, id: "finish" },
     ];
 };
 
@@ -141,20 +143,64 @@ const GetQuoteDialog = () => {
 
     const [isBackOn, setIsBackOn] = useState(false);
     const [isNextOn, setIsNextOn] = useState(false);
-    const [isSkipOn, setIsSkipOn] = useState(false);
     const [isFinishOn, setIsFinishOn] = useState(false);
     const [questIterator, setQuestIterator] = useState(0);
     //Save selected or set information from quest
     const [questState, setQuestState] = useState({});
 
-    useEffect(() => {
-        console.log(questState);
-    }, [questState]);
+    const preparedQuestVariables = () => {
+        const resultObj = {};
+        for (const [key, value] of Object.entries(questState)) {
+            resultObj[key] = [];
+            if (typeof value !== "string" && key !== "contacts") {
+                for (const [key1, value2] of Object.entries(value)) {
+                    if (value2) {
+                        resultObj[key].push(key1);
+                    }
+                }
+            } else if (key === "contacts") {
+                for (const [key1, value2] of Object.entries(value)) {
+                    if (key1) {
+                        resultObj[key].push(value2);
+                    }
+                }
+            } else {
+                if (value) {
+                    resultObj[key].push(value);
+                }
+            }
+        }
+
+        return resultObj;
+    };
+
+    const history = useHistory();
+    const sendQuestEmail = () => {
+        if (questState) {
+            emailjs
+                .send(
+                    "service_ryl2hah",
+                    "template_cf7fivq",
+                    preparedQuestVariables(),
+                    "user_u27B7SQx346GXinwr6AIN"
+                )
+                .then(
+                    (result) => {
+                        console.log(result);
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
+        }
+        //Close the quest window
+        history.push("/");
+        setQuestIterator(0);
+    };
 
     useEffect(() => {
         setIsBackOn(false);
         setIsNextOn(false);
-        setIsSkipOn(false);
         setIsFinishOn(false);
 
         if (["start"].indexOf(quest()[questIterator]?.id) > -1) {
@@ -162,25 +208,19 @@ const GetQuoteDialog = () => {
         }
         if (
             [
-                "placeselector",
+                "places",
                 "areas",
                 "squares",
                 "material",
                 "typeoftile",
-                "ifyouHave",
+                "ifyouhave",
+                "description",
             ].indexOf(quest()[questIterator]?.id) > -1
         ) {
             setIsBackOn(true);
             setIsNextOn(true);
         }
-        if (
-            ["description", "setcontacts"].indexOf(quest()[questIterator]?.id) >
-            -1
-        ) {
-            setIsBackOn(true);
-            setIsSkipOn(true);
-        }
-        if (["finish"].indexOf(quest()[questIterator]?.id) > -1) {
+        if (["contacts"].indexOf(quest()[questIterator]?.id) > -1) {
             setIsBackOn(true);
             setIsFinishOn(true);
         }
@@ -189,7 +229,6 @@ const GetQuoteDialog = () => {
     const onClickQuestButton = (selectedBtn) => {
         switch (selectedBtn) {
             case "next":
-            case "skip":
                 if (questIterator < quest().length)
                     setQuestIterator(questIterator + 1);
                 break;
@@ -197,6 +236,7 @@ const GetQuoteDialog = () => {
                 if (questIterator > 0) setQuestIterator(questIterator - 1);
                 break;
             case "finish":
+                sendQuestEmail();
                 break;
             default:
                 setQuestIterator(0);
@@ -248,7 +288,6 @@ const GetQuoteDialog = () => {
                                 <QuoteDialogButtons
                                     isBackOn={isBackOn}
                                     isNextOn={isNextOn}
-                                    isSkipOn={isSkipOn}
                                     isFinishOn={isFinishOn}
                                     callback={(btn) => {
                                         onClickQuestButton(btn);

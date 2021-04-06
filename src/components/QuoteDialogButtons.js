@@ -22,24 +22,16 @@ const animation = {
     },
 };
 
-const QuoteDialogButtons = ({
-    isBackOn,
-    isNextOn,
-    isSkipOn,
-    isFinishOn,
-    callback,
-}) => {
+const QuoteDialogButtons = ({ isBackOn, isNextOn, isFinishOn, callback }) => {
     const [back, setIsBackOn] = useState(false);
     const [next, setIsNextOn] = useState(false);
-    const [skip, setIsSkipOn] = useState(false);
     const [finish, setIsFinishOn] = useState(false);
 
     useEffect(() => {
         setIsBackOn(isBackOn);
         setIsNextOn(isNextOn);
-        setIsSkipOn(isSkipOn);
         setIsFinishOn(isFinishOn);
-    }, [isBackOn, isNextOn, isSkipOn, isFinishOn]);
+    }, [isBackOn, isNextOn, isFinishOn]);
     return (
         <DialogButtonsStyle>
             {back && (
@@ -68,19 +60,6 @@ const QuoteDialogButtons = ({
                     Next
                 </motion.div>
             )}
-            {skip && (
-                <motion.div
-                    variants={animation}
-                    className="skip"
-                    initial="start"
-                    whileHover="hover"
-                    whileTap="tap"
-                    transition="transition"
-                    onClick={() => callback("skip")}
-                >
-                    Skip
-                </motion.div>
-            )}
             {finish && (
                 <motion.div
                     variants={animation}
@@ -103,7 +82,6 @@ const DialogButtonsStyle = styled(motion.div)`
     align-items: center;
     .back,
     .next,
-    .skip,
     .finish {
         flex-grow: 1;
         margin: 0 1rem;

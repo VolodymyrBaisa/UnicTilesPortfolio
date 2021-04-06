@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const Input = ({ name, label, icon, required }) => {
+const Input = ({ name, label, value = "", icon, required }) => {
+    const [valueState, setValueState] = useState("");
+    const divWrapperRef = useRef(null);
+
+    const onFocus = () => {
+        divWrapperRef.current.style.border = "0.2rem solid #ebb02d";
+    };
+
+    const onFocusOut = () => {
+        divWrapperRef.current.style.border = "0.2rem solid #46423d";
+    };
+
     return (
         <StyledInput>
             <div className="label">
-                {label} <span>*</span>
+                {label && label} {required && <span>*</span>}
             </div>
-            <div className="input-wrapper">
-                <input name={name} type="text" required={required} />
-                <img src={icon} alt="" />
+            <div ref={divWrapperRef} className="input-wrapper">
+                <input
+                    name={name}
+                    type="text"
+                    value={value ? value : valueState}
+                    required={required}
+                    onChange={(e) => setValueState(e.target.value)}
+                    onFocus={onFocus}
+                    onBlur={onFocusOut}
+                />
+                {icon && <img src={icon} alt="" />}
             </div>
         </StyledInput>
     );
@@ -36,6 +55,7 @@ const StyledInput = styled(motion.div)`
         border: 0.2rem solid #46423d;
         border-radius: 0.5rem;
         padding: 0 0.5rem;
+
         input {
             all: unset;
             width: 100%;
@@ -43,6 +63,7 @@ const StyledInput = styled(motion.div)`
             font-size: 1.8rem;
             cursor: text;
         }
+
         img {
             width: 2.5rem;
             margin-left: 0.2rem;

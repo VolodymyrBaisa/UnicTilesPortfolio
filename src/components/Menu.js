@@ -26,13 +26,13 @@ const openMenuAnimation = {
             ease: [0.83, 0, 0.17, 1],
         },
     },
-    open: {
-        width: 70 + "vw",
+    open: (custom) => ({
+        width: custom + "vw",
         transition: {
             duration: 1.2,
             ease: [0.83, 0, 0.17, 1],
         },
-    },
+    }),
 };
 
 const menuOpenItemAnimation = {
@@ -72,6 +72,7 @@ const menuOpenHeaderAnimation = {
 const Menu = ({ menuArray }) => {
     const [isMobileMenuShow, setIsMobileMenuShow] = useState(false);
     const isPageWidthMin800 = useMediaQuery("(min-width: 801px)");
+    const isPageWidthMin600 = useMediaQuery("(min-width: 601px)");
 
     const scrollbar = () => {
         document.body.style.overflow = isMobileMenuShow ? "hidden" : null;
@@ -104,6 +105,7 @@ const Menu = ({ menuArray }) => {
                         ))}
                 </ul>
             ) : (
+                //Mobile menu
                 <>
                     <img
                         className="menu"
@@ -115,6 +117,7 @@ const Menu = ({ menuArray }) => {
                         {isMobileMenuShow && (
                             <motion.div
                                 className="mobile-menu-wrapper"
+                                custom={isPageWidthMin600 ? 50 : 70}
                                 variants={openMenuAnimation}
                                 initial="close"
                                 animate="open"
@@ -232,6 +235,7 @@ const StyledMenu = styled(motion.div)`
         height: 100vh;
         background: #fff;
         border-right: 0.2rem solid #27272b;
+        overflow-y: scroll;
         .mobile-menu-header {
             width: 100%;
             height: 7.5rem;
@@ -248,6 +252,8 @@ const StyledMenu = styled(motion.div)`
                 font-weight: bold;
                 color: #46423d;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
         ul {
@@ -258,7 +264,7 @@ const StyledMenu = styled(motion.div)`
             height: 60rem;
             .menu-item {
                 color: #46423d;
-                font-size: 4rem;
+                font-size: 3.5rem;
                 font-weight: bold;
                 margin-left: 0;
                 margin-bottom: 2rem;

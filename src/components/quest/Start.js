@@ -2,10 +2,15 @@ import React from "react";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { windowAnimation } from "./Animation";
 
 const Start = () => {
     return (
-        <StyledStart>
+        <StyledStart
+            variants={windowAnimation}
+            initial="initial"
+            animate="anim"
+        >
             <div className="header">
                 <p>Tell us about your project for more</p>
                 <p>accurate const estimate.</p>
