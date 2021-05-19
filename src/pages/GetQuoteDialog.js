@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 //Components
 import QuoteDialogButtons from "../components/QuoteDialogButtons";
 import Progress from "../components/Progress";
+import Message from "../components/Message";
 //Img
 import closeBtn from "../img/svg/x-circle.svg";
 //Storage
@@ -136,6 +137,11 @@ const quest = (questState, setQuestState) => {
 };
 
 const GetQuoteDialog = () => {
+    const [messageObj, setMessageObj] = useState({
+        title: "",
+        message: "",
+        isShown: false,
+    });
     const location = useLocation();
     const path = location.pathname;
     const linkTo = storage.quoteButton.linkTo;
@@ -186,9 +192,19 @@ const GetQuoteDialog = () => {
                 )
                 .then(
                     (result) => {
-                        console.log(result);
+                        setMessageObj({
+                            title: "Success!",
+                            message:
+                                "Thank you for taking the time to send through the information!",
+                            isShown: true,
+                        });
                     },
                     (error) => {
+                        setMessageObj({
+                            title: "Oh No!",
+                            message: "Quote information was not delivered",
+                            isShown: true,
+                        });
                         console.log(error.text);
                     }
                 );
@@ -297,6 +313,17 @@ const GetQuoteDialog = () => {
                         </div>
                     </motion.div>
                 </StyledGetQuoteDialog>
+            )}
+
+            {messageObj.isShown && (
+                <Message
+                    title={messageObj.title}
+                    message={messageObj.message}
+                    type={messageObj.type}
+                    closeCallback={(close) => {
+                        setMessageObj({ ...messageObj, isShown: !close });
+                    }}
+                />
             )}
         </AnimatePresence>
     );

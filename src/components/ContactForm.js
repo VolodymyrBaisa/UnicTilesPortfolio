@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 //Styling and Animation
 import styled from "styled-components";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 //Components
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
 import InputButton from "../components/InputButton";
+import Message from "../components/Message";
 //Icons
 import user from "../img/svg/user.svg";
 import email2 from "../img/svg/mail2.svg";
@@ -44,6 +45,12 @@ const ContactForm = () => {
 
     const [sendSuccessRes, setSendSuccessRes] = useState(0);
 
+    const [messageObj, setMessageObj] = useState({
+        title: "",
+        message: "",
+        isShown: false,
+    });
+
     const setSuccessResWithTimeout = (id) => {
         setSendSuccessRes(id);
         setTimeout(() => {
@@ -64,9 +71,20 @@ const ContactForm = () => {
             .then(
                 (result) => {
                     setSuccessResWithTimeout(1);
+                    setMessageObj({
+                        title: "Success!",
+                        message:
+                            "Thank you for taking the time to send through the information!",
+                        isShown: true,
+                    });
                 },
                 (error) => {
                     setSuccessResWithTimeout(2);
+                    setMessageObj({
+                        title: "Oh No!",
+                        message: "Message was not delivered",
+                        isShown: true,
+                    });
                     console.log(error.text);
                 }
             );
@@ -102,6 +120,18 @@ const ContactForm = () => {
                 </div>
                 <InputButton success={sendSuccessRes} />
             </form>
+            <AnimatePresence>
+                {messageObj.isShown && (
+                    <Message
+                        title={messageObj.title}
+                        message={messageObj.message}
+                        type={messageObj.type}
+                        closeCallback={(close) => {
+                            setMessageObj({ ...messageObj, isShown: !close });
+                        }}
+                    />
+                )}
+            </AnimatePresence>
         </StyledContactForm>
     );
 };
