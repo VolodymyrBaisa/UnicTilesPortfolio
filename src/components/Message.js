@@ -119,6 +119,24 @@ const StyledMessage = styled(motion.div)`
             color: #46423d;
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        .window {
+            width: 60%;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .window {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .window {
+            width: 90%;
+        }
+    }
 `;
 
 export default Message;
