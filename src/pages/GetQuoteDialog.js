@@ -193,16 +193,15 @@ const GetQuoteDialog = () => {
                 .then(
                     (result) => {
                         setMessageObj({
-                            title: "Success!",
-                            message:
-                                "Thank you for taking the time to send through the information!",
+                            title: storage.message.success.title,
+                            message: storage.message.success.message,
                             isShown: true,
                         });
                     },
                     (error) => {
                         setMessageObj({
-                            title: "Oh No!",
-                            message: "Quote information was not delivered",
+                            title: storage.message.error.title,
+                            message: storage.message.error.message,
                             isShown: true,
                         });
                         console.log(error.text);

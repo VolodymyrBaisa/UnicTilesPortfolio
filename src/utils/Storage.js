@@ -204,6 +204,18 @@ const storage = {
             `,
         },
     ],
+
+    message: {
+        success: {
+            title: "Success!",
+            message:
+                "Thank you for taking the time to send through the information!",
+        },
+        error: {
+            title: "Oh No!",
+            message: "Message was not delivered.",
+        },
+    },
 };
 
 export default storage;

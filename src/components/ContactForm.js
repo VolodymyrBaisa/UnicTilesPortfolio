@@ -12,6 +12,8 @@ import Message from "../components/Message";
 //Icons
 import user from "../img/svg/user.svg";
 import email2 from "../img/svg/mail2.svg";
+//Storage
+import storage from "../utils/Storage";
 
 const contactFormAnimation = {
     hidden: {
@@ -72,17 +74,16 @@ const ContactForm = () => {
                 (result) => {
                     setSuccessResWithTimeout(1);
                     setMessageObj({
-                        title: "Success!",
-                        message:
-                            "Thank you for taking the time to send through the information!",
+                        title: storage.message.success.title,
+                        message: storage.message.success.message,
                         isShown: true,
                     });
                 },
                 (error) => {
                     setSuccessResWithTimeout(2);
                     setMessageObj({
-                        title: "Oh No!",
-                        message: "Message was not delivered",
+                        title: storage.message.error.title,
+                        message: storage.message.error.message,
                         isShown: true,
                     });
                     console.log(error.text);
@@ -90,7 +91,6 @@ const ContactForm = () => {
             );
         e.target.reset();
     };
-
     return (
         <StyledContactForm
             variants={contactFormAnimation}
