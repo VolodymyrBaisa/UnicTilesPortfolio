@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //Styling and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -8,14 +8,20 @@ const socialIconAnimation = {
 };
 
 const SocialIcons = ({ icons }) => {
+    const [getImageWidth, setImageWidth] = useState(0);
+    const handleImgHover = (e) => {
+        setImageWidth(e.target?.clientWidth);
+    };
+
     return (
-        <StyledSocialIcons>
+        <StyledSocialIcons getImageWidth={getImageWidth}>
             {icons.length > 0 &&
                 icons.map((icon, index) => {
                     return (
                         <div key={index}>
                             <a href={icon.link} target="_blank">
                                 <motion.img
+                                    onMouseOver={handleImgHover}
                                     src={icon.icon}
                                     alt=""
                                     variants={socialIconAnimation}
@@ -47,23 +53,21 @@ const StyledSocialIcons = styled(motion.div)`
             transition: all 0.3s ease;
         }
         &:hover:after {
-            width: 2.5rem;
+            width: ${(props) => props.getImageWidth + "px"};
         }
     }
     img {
-        width: 2.5rem;
+        /* width: 2.5rem; */
+        height: 2.5rem;
     }
 
     @media screen and (max-width: 800px) {
         img {
-            width: 3.5rem;
+            height: 3.5rem;
         }
         div {
             &:after {
                 margin-top: 0.7rem;
-            }
-            &:hover:after {
-                width: 3.5rem;
             }
         }
     }

@@ -24,6 +24,7 @@ import slider20 from "../img/slider/20.jpg";
 import instagram from "../img/svg/instagram.svg";
 import facebook from "../img/svg/facebook.svg";
 import homeadvisor from "../img/svg/homeadvisor.svg";
+import betterBusinessBureau from "../img/svg/better-business-bureau.svg";
 
 //Service Card
 //Images
@@ -52,6 +53,10 @@ const storage = {
         {
             icon: homeadvisor,
             link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
+        },
+        {
+            icon: betterBusinessBureau,
+            link: "https://www.bbb.org/us/ct/southport/profile/tile-installation/unic-tiles-llc-0111-110077617/",
         },
     ],
     //Menu
