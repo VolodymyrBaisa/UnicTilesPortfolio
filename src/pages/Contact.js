@@ -13,7 +13,7 @@ import ContactForm from "../components/ContactForm";
 import Map from "../components/Map";
 import Contacts from "../components/Contacts";
 //Container
-import contactUsBackground from "../img/svg/contact-us-background.svg";
+import contactUsBackground from "../img/contact/contact-us-background.png";
 import maskFooter from "../img/svg/mask_footer.svg";
 //Storage
 import storage from "../utils/Storage";

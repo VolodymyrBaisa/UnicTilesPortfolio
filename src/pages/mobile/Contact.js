@@ -11,7 +11,7 @@ import ShortContacts from "../../components/ShortContacts";
 import Map from "../../components/Map";
 import Contacts from "../../components/Contacts";
 //Container
-import contactUsBackground from "../../img/svg/contact-us-background-mob.svg";
+import contactUsBackground from "../../img/contact/contact-us-background-mob.png";
 import maskFooter from "../../img/svg/mask_footer.svg";
 //Storage
 import storage from "../../utils/Storage";
