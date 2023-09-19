@@ -57,7 +57,7 @@ const StyledSocialIcons = styled(motion.div)`
         }
     }
     img {
-        /* width: 2.5rem; */
+        /*width: 2.5rem;*/
         height: 2.5rem;
     }
 

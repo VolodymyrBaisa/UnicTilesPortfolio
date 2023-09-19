@@ -48,7 +48,7 @@ const storage = {
         { icon: instagram, link: "https://www.instagram.com/unic_tiles" },
         {
             icon: facebook,
-            link: "https://www.facebook.com/Unic-Tiles-1837680899810627/",
+            link: "https://www.facebook.com/unictiles/",
         },
         {
             icon: homeadvisor,
@@ -101,14 +101,8 @@ const storage = {
     },
     //free quote text box
     freeQuote: {
-        header: "RESIDENTIAL AND COMMERCIAL TILE INSTALLATION CONTRACTOR",
-        text: `Our top-notch design team and highly skilled
-        flooring tile installation
-
-        professionals create stunning tiling 
-        masterpieces, backsplash ideas,
-
-        and backsplash designs that we promise you will enjoy.`,
+        header: "Request Your Free Quote from Tile Installation Specialists",
+        text: "• Why Ordinary? Choose extraordinary craftsmanship.\n• Dreams to Reality: Stunning flooring and backsplashes.\n• Seamless: Full-service, from consult to install.\n• Quality: Durable designs for all spaces.\n• Start Now: Get a free quote today."
     },
     //Quote button
     quoteButton: {
@@ -118,95 +112,56 @@ const storage = {
         // linkBack: "/UnicTilesPortfolio/",
     },
     //About Us
-    aboutText: `Unic Tiles tile installation professionals are ready to serve you. Courtesy may be the first thing most individuals think of when it comes to tile installations, but for us, it is considered the most important tool we carry. We know that your tile’s condition can have a dramatic effect on the overall appearance of your home or office. From the backsplash to the counters, we are here for you, we put off the pressure on your shoulders.
-                        
-    Unic Tiles team can bring elegance and style to almost any space in your home. Let our experts install the perfect tile for your space and create the look you’ve been dreaming of. We can help bring new life to any space in your home.
-    
-    Our team has experience in backsplashes, fireplaces, residential and commercial tile installations, tile repairing, kitchen and bathroom remodeling, commercial kitchen tile, showroom tile installation…
+    aboutText: `At Unic Tiles, we pride ourselves on our exceptional tile installation services and the courtesy we extend to each client. We understand the transformative impact that well-installed tiles can have on your home or office space. From backsplashes to countertops, we're here to relieve you of the burden and elevate the look and feel of your space.
 
-    Our mission is to make your remodeling project a less stressful experience by providing a professional atmosphere tailored to meet your needs, both in design and function.`,
+    Our seasoned team offers a wide array of tiling services, ranging from bathroom and kitchen remodels to repairs and specialty installations like stone tiling and backsplashes.
+    
+    Our mission is simple: To make your remodeling journey as smooth as possible by tailoring our services to meet your specific design and functional needs. With Unic Tiles, you're not just getting a contractor; you're investing in a committed partner. Choose Unic Tiles for a transformation that stands the test of time.
+    
+    In an industry where quality and customer satisfaction can vary widely, we stand out for our dedication to craftsmanship, timely service, and unwavering commitment to your satisfaction. Partnering with Unic Tiles means investing in a service where every detail counts, and where your vision becomes our mission.`,
     //Service cards
     cards: [
         {
             image: { bathroom },
             headerIcon: { iconBath },
             headerText: "BATHROOM",
-            shortText: `As one of the most used rooms in your home,
-            your bathroom deserves to look beautiful. 
-            It’s where you go to refresh, unwind, and 
-            prepare yourself to begin and end the day. 
-            Every size bathroom deserves the same care 
-            and expertise. 
-            Let Unic Tiles team turn them into comfortable, inviting retreats.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Elevate your bathroom experience with Unic Tiles. We specialize in high-quality tiling that transforms your bathroom into a sanctuary. Book a consultation today!`,
+            longText: `Transform your bathroom into a sanctuary of comfort and style with Unic Tiles. Our team of experts specializes in delivering high-quality tiling solutions that stand the test of time. From modern designs to classic elegance, we offer a wide range of options to suit your taste and budget. Experience the Unic Tiles difference today and elevate your bathroom experience.`,
         },
         {
             image: { repair_removal },
             headerIcon: { iconRepair_removal },
             headerText: "Repair & Removel",
-            shortText: `We start with a free in-home estimate to assess 
-            your specific situation. Our skilled tile installers 
-            know all of the s and outs and can spot potential problem areas before they become actual issues.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Restore the beauty of your home with our tile repair and removal services. Get a free in-home estimate and let our experts handle the rest.`,
+            longText: `Don't let tile damage ruin the look of your home. At Unic Tiles, we offer comprehensive repair and removal services that restore the beauty of your spaces. Our skilled technicians use state-of-the-art equipment to ensure a flawless finish. Schedule a free in-home estimate today and say goodbye to tile problems.`,
         },
         {
             image: { kitchen },
             headerIcon: { iconKitchen },
             headerText: "KITCHEN",
-            shortText: `Our expert tile installers will take time to make 
-            sure you’re aware of all of your options, 
-            show you samples, discuss your preferences, 
-            consider your budget and find the right 
-            solution for your project.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Make your kitchen the heart of your home with Unic Tiles. We offer customized tiling solutions that suit your style and budget. Explore your options now!`,
+            longText: `The kitchen is the heart of your home, and it deserves the best. Unic Tiles brings you top-notch tiling solutions that combine functionality with aesthetics. Our experts work closely with you to understand your needs and deliver results that exceed your expectations. Choose from a variety of materials, patterns, and finishes to create a kitchen that reflects your style.`,
         },
         {
             image: { floor },
             headerIcon: { iconFloor },
             headerText: "FLOOR",
-            shortText: `As one of the most used rooms in your home,
-            your bathroom deserves to look beautiful. 
-            It’s where you go to refresh, unwind, and 
-            prepare yourself to begin and end the day. 
-            Every size bathroom deserves the same care 
-            and expertise. 
-            Let Unic Tiles team turn them into comfortable, inviting retreats.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Step into a new world of flooring with Unic Tiles. Our durable and visually stunning floor tiles are a statement of style and comfort. Get started today!`,
+            longText: `Flooring is more than just a surface to walk on; it's a statement of style and comfort. Unic Tiles offers a wide range of floor tiling options that are durable, easy to maintain, and visually stunning. Our team of professionals ensures seamless installation, transforming your floors into works of art. Step into a new world of flooring with Unic Tiles.`,
         },
         {
             image: { backsplash },
             headerIcon: { iconBacksplash },
             headerText: "Backsplash",
-            shortText: `We start with a free in-home estimate to assess 
-            your specific situation. Our skilled tile installers 
-            know all of the s and outs and can spot potential problem areas before they become actual issues.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Enhance your space with our exquisite backsplash tiling. Protect your walls and add a touch of elegance. Schedule a consultation today!`,
+            longText: `Add a touch of elegance to your kitchen or bathroom with our exquisite backsplash tiling options. Unic Tiles offers a variety of designs that not only protect your walls but also enhance the overall look of your space. Our experts handle everything from consultation to installation, ensuring you get the perfect backsplash that complements your style.`,
         },
         {
             image: { stone },
             headerIcon: { iconStone },
             headerText: "STONE",
-            shortText: `Our expert tile installers will take time to make 
-            sure you’re aware of all of your options, 
-            show you samples, discuss your preferences, 
-            consider your budget and find the right 
-            solution for your project.`,
-            longText: `What is Lorem Ipsum?
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            `,
+            shortText: `Discover the timeless beauty of stone tiling with Unic Tiles. Ideal for indoor and outdoor spaces, our stone tiles offer unmatched durability and style. Contact us now!`,
+            longText: `Experience the timeless beauty of stone tiling with Unic Tiles. Ideal for both indoor and outdoor applications, our stone tiles offer durability and aesthetic appeal. Whether it's a patio, a fireplace, or a kitchen countertop, our experts will guide you through the entire process, ensuring a result that meets your vision and stands the test of time.`,
         },
     ],
 

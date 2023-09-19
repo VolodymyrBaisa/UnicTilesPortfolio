@@ -12,7 +12,7 @@ const Logo = () => {
                 <img className="icon" src={LogoIcon} alt="UnicTiles Logo" />
                 <div>
                     <div className="title">Unic Tiles</div>
-                    <div className="slogan">We build your dreams</div>
+                    <div className="slogan">Building Dream Spaces</div>
                 </div>
             </div>
         </StyledLogo>
@@ -36,6 +36,7 @@ const StyledLogo = styled(motion.div)`
         align-items: center;
         .icon {
             width: 8.5rem;
+            height: 8.5rem;
             margin: 0 1vw 0 2rem;
         }
         .title {
