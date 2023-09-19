@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.02b7ace0.css",
-    "main.js": "/static/js/main.947ee106.js",
+    "main.js": "/static/js/main.ff6f5f08.js",
     "static/js/787.bead54fa.chunk.js": "/static/js/787.bead54fa.chunk.js",
     "static/media/14.jpg": "/static/media/14.e79c64daffd83dc07512.jpg",
     "static/media/stone.jpg": "/static/media/stone.2298c75f6905ee83a924.jpg",
@@ -32,16 +32,17 @@
     "static/media/16.jpg": "/static/media/16.1da8d154c76fe8475dec.jpg",
     "static/media/construction_worker.png": "/static/media/construction_worker.aa8de881bb2fcbc2da65.png",
     "static/media/contact-us-background-mob.png": "/static/media/contact-us-background-mob.1b731d7ecd6ef733abc0.png",
-    "static/media/better-business-bureau.svg": "/static/media/better-business-bureau.dedfaa419c480608819ca8ddca86c281.svg",
+    "static/media/better-business-bureau.svg": "/static/media/better-business-bureau.156d55398429413fd2265e8475129e8f.svg",
     "static/media/stone.svg": "/static/media/stone.a4d14529051e3e2a1dd8d5bf46db3e44.svg",
     "static/media/floor.svg": "/static/media/floor.403de5689872f277e4091114c88d6aac.svg",
+    "index.html": "/index.html",
     "static/media/backsplash.svg": "/static/media/backsplash.16394873a44621e7a0cdca5a24bbedab.svg",
     "static/media/logo_icon.svg": "/static/media/logo_icon.43b4d1d3fe1a95516e71760d95c147b9.svg",
     "static/media/logo2.svg": "/static/media/logo2.fe6eaa6e33627e2a5784b7aa80a413f2.svg",
     "static/media/phone2.svg": "/static/media/phone2.ec2ad5d79bb14d44f3b3fabef176d05c.svg",
     "static/media/phone.svg": "/static/media/phone.92f59b074a6381f13834c6e0e9098d03.svg",
     "static/media/homeadvisor.svg": "/static/media/homeadvisor.33f1c4e0680d1f68735f2a9dc95da11b.svg",
-    "static/media/instagram.svg": "/static/media/instagram.75d8d55774082c9ae65ba407e166069c.svg",
+    "static/media/instagram.svg": "/static/media/instagram.516330e6b59093fe62f84839ad322a76.svg",
     "static/media/bath.svg": "/static/media/bath.83d94f501d08715a91d9e686903f2b97.svg",
     "static/media/map-pin.svg": "/static/media/map-pin.03ed4cb9b992bf896f1a3279cf7caabe.svg",
     "static/media/mask-down.svg": "/static/media/mask-down.59cd84887d05891c0888355585d11a6f.svg",
@@ -49,14 +50,13 @@
     "static/media/right-arrow.svg": "/static/media/right-arrow.e24c0591951491206dd6c8aa4fcb6186.svg",
     "static/media/left-arrow.svg": "/static/media/left-arrow.1c89dd075150d10a4566bfb8d618b805.svg",
     "static/media/forkknife.svg": "/static/media/forkknife.e4844ee49c699f1503fc0842a9429922.svg",
-    "index.html": "/index.html",
     "static/media/user.svg": "/static/media/user.9c18c89c025dabca3607836fd28d7abb.svg",
     "static/media/mask-up.svg": "/static/media/mask-up.95022b8b3a94e6bf324e5e35168bb67b.svg",
     "static/media/x-circle.svg": "/static/media/x-circle.a19aea55c972c5ac0c187ff2b9b36d84.svg",
     "static/media/mail3.svg": "/static/media/mail3.c78682d5f09843106a374bc19df7258f.svg",
     "static/media/mail.svg": "/static/media/mail.74230725b64e5d7af9b828b5127e32fa.svg",
     "static/media/mail2.svg": "/static/media/mail2.16f553c369a61c1d96d3d35597466c2f.svg",
-    "static/media/facebook.svg": "/static/media/facebook.8d9a1222154ae4c67e91e7900199a108.svg",
+    "static/media/facebook.svg": "/static/media/facebook.ea859be1a83d360c71612f4ed7057dfe.svg",
     "static/media/keyboard_arrow_right.svg": "/static/media/keyboard_arrow_right.bf7ee388b4eb27744d3c7b2a0aebd1be.svg",
     "static/media/menu.svg": "/static/media/menu.00254e5ae7d9a1b93553f9a7f171ec72.svg",
     "static/media/mask_footer.svg": "/static/media/mask_footer.d62cad15f9b1831f9c76611fe78ecaa8.svg",
@@ -67,11 +67,11 @@
     "static/media/figure-card-top-left.svg": "/static/media/figure-card-top-left.533f12e66720dad6d6160a9a9d21905a.svg",
     "static/media/figure-top-right.svg": "/static/media/figure-top-right.a9bb7a7f765731aa287c3d7f3fcf0c37.svg",
     "main.02b7ace0.css.map": "/static/css/main.02b7ace0.css.map",
-    "main.947ee106.js.map": "/static/js/main.947ee106.js.map",
+    "main.ff6f5f08.js.map": "/static/js/main.ff6f5f08.js.map",
     "787.bead54fa.chunk.js.map": "/static/js/787.bead54fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.02b7ace0.css",
-    "static/js/main.947ee106.js"
+    "static/js/main.ff6f5f08.js"
   ]
 }

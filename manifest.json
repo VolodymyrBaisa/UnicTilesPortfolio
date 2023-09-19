@@ -1,6 +1,7 @@
 {
     "short_name": "UnicTiles",
     "name": "UnicTils Portfolio",
+    "description": "UnicTiles offers an array of tiling services including bathroom, kitchen, and floor tiling. Explore our portfolio today.",
     "icons": [
         {
             "src": "favicon.ico",
