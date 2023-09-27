@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://unictiles.com/</loc>
+        <lastmod>2023-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Services Page -->
+    <url>
+        <loc>https://unictiles.com/services</loc>
+        <lastmod>2023-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Portfolio Page -->
+    <url>
+        <loc>https://unictiles.com/portfolio</loc>
+        <lastmod>2023-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Contact Page -->
+    <url>
+        <loc>https://unictiles.com/contact</loc>
+        <lastmod>2023-09-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <!-- About Us Page -->
+    <url>
+        <loc>https://unictiles.com/about</loc>
+        <lastmod>2023-09-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
