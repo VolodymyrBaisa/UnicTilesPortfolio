@@ -54,10 +54,10 @@ const storage = {
             icon: homeadvisor,
             link: "https://www.homeadvisor.com/rated.UnicTiles.107162783.html",
         },
-        {
-            icon: betterBusinessBureau,
-            link: "https://www.bbb.org/us/ct/southport/profile/tile-installation/unic-tiles-llc-0111-110077617/",
-        },
+        // {
+        //     icon: betterBusinessBureau,
+        //     link: "https://www.bbb.org/us/ct/southport/profile/tile-installation/unic-tiles-llc-0111-110077617/",
+        // },
     ],
     //Menu
     menuArray: [
